@@ -1,1030 +1,1024 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Dyadic Plenum — Theories of Everything</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <title>The Dyadic Plenum — Theories of Everything</title>
 
-    <!-- KaTeX for math rendering -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
-    />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    ></script>
+  <!-- Fonts -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com" />
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet" />
 
-    <style>
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer
+          src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    :root {
+      /* Light mode (default) */
+      --bg-page: #f5f4f1;
+      --bg-paper: #fdfcfa;
+      --text-primary: #2d2a26;
+      --text-secondary: #5c5751;
+      --text-tertiary: #8a847b;
+      --accent: #6b5c4c;
+      --accent-light: #8b7a68;
+      --accent-hover: #4a3f35;
+      --border: #e5e2dc;
+      --border-light: #efece7;
+      --shadow: rgba(45, 42, 38, 0.08);
+      --shadow-strong: rgba(45, 42, 38, 0.12);
+      --highlight: #f0ebe3;
+      --abstract-bg: #faf8f5;
+    }
+
+    @media (prefers-color-scheme: dark) {
       :root {
-        /* Light mode (default) */
-        --bg-page: #f5f4f1;
-        --bg-paper: #fdfcfa;
-        --text-primary: #2d2a26;
-        --text-secondary: #5c5751;
-        --text-tertiary: #8a847b;
-        --accent: #6b5c4c;
-        --accent-light: #8b7a68;
-        --accent-hover: #4a3f35;
-        --border: #e5e2dc;
-        --border-light: #efece7;
-        --shadow: rgba(45, 42, 38, 0.08);
-        --shadow-strong: rgba(45, 42, 38, 0.12);
-        --highlight: #f0ebe3;
-        --abstract-bg: #faf8f5;
+        --bg-page: #141312;
+        --bg-paper: #1c1a18;
+        --text-primary: #dfd9d3;
+        --text-secondary: #b5aea4;
+        --text-tertiary: #7d766c;
+        --accent: #c9b99a;
+        --accent-light: #a89878;
+        --accent-hover: #ddd0b5;
+        --border: #2e2b27;
+        --border-light: #252320;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --shadow-strong: rgba(0, 0, 0, 0.4);
+        --highlight: #252320;
+        --abstract-bg: #1f1d1a;
       }
+    }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg-page: #141312;
-          --bg-paper: #1c1a18;
-          --text-primary: #e8e4df;
-          --text-secondary: #b5aea4;
-          --text-tertiary: #7d766c;
-          --accent: #c9b99a;
-          --accent-light: #a89878;
-          --accent-hover: #ddd0b5;
-          --border: #2e2b27;
-          --border-light: #252320;
-          --shadow: rgba(0, 0, 0, 0.3);
-          --shadow-strong: rgba(0, 0, 0, 0.4);
-          --highlight: #252320;
-          --abstract-bg: #1f1d1a;
-        }
-      }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+    html {
+      font-size: 20px;
+      scroll-behavior: smooth;
+    }
 
+    body {
+      margin: 0;
+      padding: 2.5rem 1rem 4rem;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    }
+
+    /* Paper container */
+    .paper {
+      max-width: 50rem;
+      margin: 0 auto;
+      background: var(--bg-paper);
+      padding: 3.2rem 3.5rem 4rem;
+      box-shadow:
+        0 1px 3px var(--shadow),
+        0 8px 30px var(--shadow),
+        0 25px 60px var(--shadow-strong);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    @media (max-width: 800px) {
       html {
-        font-size: 20px;
-        scroll-behavior: smooth;
+        font-size: 17px;
       }
 
       body {
-        margin: 0;
-        padding: 2.5rem 1rem 4rem;
-        background: var(--bg-page);
-        color: var(--text-primary);
-        font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
-        line-height: 1.75;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease;
+        padding: 1rem 0.5rem 3rem;
       }
 
-      /* Paper container */
       .paper {
-        max-width: 50rem;
-        margin: 0 auto;
-        background: var(--bg-paper);
-        padding: 3.2rem 3.5rem 4rem;
-        box-shadow:
-          0 1px 3px var(--shadow),
-          0 8px 30px var(--shadow),
-          0 25px 60px var(--shadow-strong);
-        border-radius: 2px;
-        position: relative;
+        padding: 2rem 1.5rem 3rem;
       }
+    }
 
-      @media (max-width: 800px) {
-        html {
-          font-size: 17px;
-        }
-        body {
-          padding: 1rem 0.5rem 3rem;
-        }
-        .paper {
-          padding: 2rem 1.5rem 3rem;
-        }
-      }
+    /* Journal header */
+    .journal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+      font-family:
+        "Inter",
+        -apple-system,
+        sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.02em;
+    }
 
-      /* Journal header */
-      .journal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding-bottom: 1.5rem;
-        margin-bottom: 2.25rem;
-        border-bottom: 1px solid var(--border);
-        font-family:
-          "Inter",
-          -apple-system,
-          sans-serif;
-        font-size: 0.72rem;
-        color: var(--text-tertiary);
-        letter-spacing: 0.02em;
-      }
+    .journal-name {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-secondary);
+      font-size: 0.67rem;
+    }
 
-      .journal-name {
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-secondary);
-        font-size: 0.67rem;
-      }
+    .journal-meta {
+      text-align: right;
+      line-height: 1.6;
+    }
 
-      .journal-meta {
-        text-align: right;
-        line-height: 1.6;
-      }
+    .journal-doi {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.61rem;
+      color: var(--text-tertiary);
+      margin-top: 0.25rem;
+    }
 
-      .journal-doi {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.61rem;
-        color: var(--text-tertiary);
-        margin-top: 0.25rem;
-      }
+    /* Title section */
+    .paper-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
 
-      /* Title section */
-      .paper-title {
-        font-size: 2.1rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin: 0 0 0.6rem;
-        color: var(--text-primary);
-        letter-spacing: -0.01em;
-      }
+    .paper-subtitle {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin: 0 0 2.25rem;
+      line-height: 1.5;
+    }
 
-      .paper-subtitle {
-        font-size: 1.15rem;
-        font-weight: 400;
-        color: var(--text-secondary);
-        margin: 0 0 2.25rem;
-        line-height: 1.5;
-      }
+    /* Author info */
+    .author-block {
+      margin-bottom: 2.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border-light);
+    }
 
-      /* Author info */
-      .author-block {
-        margin-bottom: 2.75rem;
-        padding-bottom: 1.75rem;
-        border-bottom: 1px solid var(--border-light);
-      }
+    .author-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
 
-      .author-name {
-        font-weight: 600;
-        font-size: 1.05rem;
-        color: var(--text-primary);
-        margin-bottom: 0.3rem;
-      }
+    .author-meta {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
 
-      .author-meta {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-      }
+    .author-meta span {
+      display: block;
+      margin-bottom: 0.15rem;
+    }
 
-      .author-meta span {
-        display: block;
-        margin-bottom: 0.15rem;
-      }
+    /* Abstract */
+    .abstract {
+      background: var(--abstract-bg);
+      padding: 1.85rem 2.25rem;
+      margin: 0 0 2.25rem;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+    }
 
-      /* Abstract */
-      .abstract {
-        background: var(--abstract-bg);
-        padding: 1.85rem 2.25rem;
-        margin: 0 0 2.25rem;
-        border-left: 3px solid var(--accent);
-        border-radius: 0 4px 4px 0;
-      }
+    .abstract-title {
+      font-family: "Inter", sans-serif;
+      font-size: 0.67rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      margin: 0 0 0.85rem;
+    }
 
-      .abstract-title {
-        font-family: "Inter", sans-serif;
-        font-size: 0.67rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-tertiary);
-        margin: 0 0 0.85rem;
-      }
+    .abstract p {
+      margin: 0;
+      font-size: 0.95rem;
+      text-align: justify;
+      hyphens: auto;
+    }
 
-      .abstract p {
-        margin: 0;
-        font-size: 0.95rem;
-        text-align: justify;
-        hyphens: auto;
-      }
+    /* Keywords */
+    .keywords {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
 
-      /* Keywords */
-      .keywords {
-        font-size: 0.88rem;
-        color: var(--text-secondary);
-        margin-bottom: 3rem;
-      }
+    .keywords-label {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
 
-      .keywords-label {
-        font-weight: 600;
-        color: var(--text-primary);
-      }
+    .keywords em {
+      font-style: italic;
+    }
 
-      .keywords em {
-        font-style: italic;
-      }
+    /* Citation superscripts */
+    sup.cite {
+      font-size: 0.65em;
+      font-weight: 500;
+      color: var(--accent-light);
+      margin-left: 1px;
+      font-family: "Inter", sans-serif;
+      vertical-align: super;
+      line-height: 0;
+    }
 
-      /* Citation superscripts */
-      sup.cite {
-        font-size: 0.65em;
-        font-weight: 500;
-        color: var(--accent-light);
-        margin-left: 1px;
-        font-family: "Inter", sans-serif;
-        vertical-align: super;
-        line-height: 0;
-      }
+    sup.cite a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      sup.cite a {
-        color: inherit;
-        text-decoration: none;
-      }
+    sup.cite a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
 
-      sup.cite a:hover {
-        color: var(--accent-hover);
-        text-decoration: underline;
-      }
+    /* Section headings */
+    h1.section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 3.25rem 0 1.6rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--text-primary);
+    }
 
-      /* Section headings */
-      h1.section-title {
-        font-size: 1.2rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        margin: 3.25rem 0 1.6rem;
-        padding-bottom: 0.55rem;
-        border-bottom: 2px solid var(--border);
-        color: var(--text-primary);
-      }
+    h2.subsection-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1.1rem;
+      color: var(--text-primary);
+    }
 
-      h2.subsection-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin: 2.5rem 0 1.1rem;
-        color: var(--text-primary);
-      }
+    h3.subsubsection-title {
+      font-size: 1rem;
+      font-weight: 600;
+      font-style: italic;
+      margin: 2rem 0 0.85rem;
+      color: var(--text-primary);
+    }
 
-      h3.subsubsection-title {
-        font-size: 1rem;
-        font-weight: 600;
-        font-style: italic;
-        margin: 2rem 0 0.85rem;
-        color: var(--text-primary);
-      }
+    /* Paragraphs */
+    p {
+      margin: 0 0 1.1rem;
+      text-align: justify;
+      hyphens: auto;
+    }
 
-      /* Paragraphs */
-      p {
-        margin: 0 0 1.1rem;
-        text-align: justify;
-        hyphens: auto;
-      }
+    /* Lists */
+    ol,
+    ul {
+      margin: 1.1rem 0 1.6rem 1.6rem;
+      padding: 0;
+    }
 
-      /* Lists */
-      ol,
-      ul {
-        margin: 1.1rem 0 1.6rem 1.6rem;
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 0.3rem;
+    }
+
+    li>strong {
+      color: var(--text-primary);
+    }
+
+    li ul,
+    li ol {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Blockquotes / Important statements */
+    .axiom,
+    .conclusion,
+    .derivation {
+      background: var(--highlight);
+      padding: 1.35rem 1.65rem;
+      margin: 1.6rem 0;
+      border-radius: 4px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .axiom-label,
+    .conclusion-label {
+      font-family: "Inter", sans-serif;
+      font-size: 0.61rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+    }
+
+    .axiom p,
+    .conclusion p,
+    .derivation p {
+      margin-bottom: 0.8rem;
+    }
+
+    .axiom p:last-child,
+    .conclusion p:last-child,
+    .derivation p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Equations */
+    .equation {
+      margin: 1.85rem 0;
+      padding: 1rem 0;
+      overflow-x: auto;
+      text-align: center;
+    }
+
+    .equation-note {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* KaTeX sizing */
+    .katex {
+      font-size: 1.05em;
+    }
+
+    /* Mechanism boxes */
+    .mechanism {
+      margin: 1.6rem 0;
+      padding: 1.15rem 1.5rem;
+      background: var(--abstract-bg);
+      border-radius: 4px;
+    }
+
+    .mechanism-title {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+      font-size: 0.95rem;
+    }
+
+    .mechanism p {
+      margin-bottom: 0.7rem;
+    }
+
+    .mechanism p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Phase/regime boxes */
+    .regime {
+      margin: 1.35rem 0;
+      padding: 1.1rem 1.35rem;
+      background: var(--highlight);
+      border-radius: 4px;
+    }
+
+    .regime-header {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.55rem;
+    }
+
+    .regime p,
+    .regime ul {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .regime ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    .regime li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Experiment sections */
+    .experiment {
+      margin: 2.25rem 0;
+      padding: 1.65rem 1.85rem;
+      background: var(--abstract-bg);
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+    }
+
+    .experiment h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 1.1rem;
+      color: var(--text-primary);
+    }
+
+    .experiment-section {
+      margin: 1.1rem 0;
+    }
+
+    .experiment-section>strong {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+    }
+
+    .experiment-section p {
+      font-size: 0.95rem;
+    }
+
+    .experiment-section .equation {
+      margin: 1.25rem 0;
+    }
+
+    /* Horizontal rules */
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 2.75rem 0;
+    }
+
+    /* References */
+    .references {
+      margin-top: 3.25rem;
+      padding-top: 2.25rem;
+      border-top: 2px solid var(--border);
+    }
+
+    .references h2 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0 0 1.6rem;
+      color: var(--text-primary);
+    }
+
+    .reference-list {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+
+    .reference-list p {
+      margin: 0 0 0.85rem;
+      padding-left: 2.25rem;
+      text-indent: -2.25rem;
+      text-align: left;
+    }
+
+    .reference-list a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .reference-list a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .paper-footer {
+      margin-top: 3.25rem;
+      padding-top: 1.65rem;
+      border-top: 1px solid var(--border);
+      font-family: "Inter", sans-serif;
+      font-size: 0.67rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .paper-footer p {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--accent);
+      color: var(--bg-paper);
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
         padding: 0;
       }
 
-      li {
-        margin-bottom: 0.8rem;
-        padding-left: 0.3rem;
+      .paper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0.75in 1in;
       }
+    }
 
-      li > strong {
-        color: var(--text-primary);
-      }
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
 
-      li ul,
-      li ol {
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-      }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-page);
+    }
 
-      /* Blockquotes / Important statements */
-      .axiom,
-      .conclusion,
-      .derivation {
-        background: var(--highlight);
-        padding: 1.35rem 1.65rem;
-        margin: 1.6rem 0;
-        border-radius: 4px;
-        border-left: 3px solid var(--accent);
-      }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 4px;
+    }
 
-      .axiom-label,
-      .conclusion-label {
-        font-family: "Inter", sans-serif;
-        font-size: 0.61rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--accent);
-        margin-bottom: 0.55rem;
-      }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-tertiary);
+    }
+  </style>
+</head>
 
-      .axiom p,
-      .conclusion p,
-      .derivation p {
-        margin-bottom: 0.8rem;
-      }
-
-      .axiom p:last-child,
-      .conclusion p:last-child,
-      .derivation p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* Equations */
-      .equation {
-        margin: 1.85rem 0;
-        padding: 1rem 0;
-        overflow-x: auto;
-        text-align: center;
-      }
-
-      .equation-note {
-        text-align: center;
-        color: var(--text-secondary);
-        font-size: 0.88rem;
-        margin-top: -1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      /* KaTeX sizing */
-      .katex {
-        font-size: 1.05em;
-      }
-
-      /* Mechanism boxes */
-      .mechanism {
-        margin: 1.6rem 0;
-        padding: 1.15rem 1.5rem;
-        background: var(--abstract-bg);
-        border-radius: 4px;
-      }
-
-      .mechanism-title {
-        font-weight: 600;
-        color: var(--accent);
-        margin-bottom: 0.55rem;
-        font-size: 0.95rem;
-      }
-
-      .mechanism p {
-        margin-bottom: 0.7rem;
-      }
-
-      .mechanism p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* Phase/regime boxes */
-      .regime {
-        margin: 1.35rem 0;
-        padding: 1.1rem 1.35rem;
-        background: var(--highlight);
-        border-radius: 4px;
-      }
-
-      .regime-header {
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: 0.55rem;
-      }
-
-      .regime p,
-      .regime ul {
-        margin: 0;
-        font-size: 0.95rem;
-      }
-
-      .regime ul {
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-      }
-
-      .regime li {
-        margin-bottom: 0.4rem;
-      }
-
-      /* Experiment sections */
-      .experiment {
-        margin: 2.25rem 0;
-        padding: 1.65rem 1.85rem;
-        background: var(--abstract-bg);
-        border-radius: 6px;
-        border: 1px solid var(--border-light);
-      }
-
-      .experiment h4 {
-        font-size: 1.05rem;
-        font-weight: 600;
-        margin: 0 0 1.1rem;
-        color: var(--text-primary);
-      }
-
-      .experiment-section {
-        margin: 1.1rem 0;
-      }
-
-      .experiment-section > strong {
-        display: block;
-        font-family: "Inter", sans-serif;
-        font-size: 0.72rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--accent);
-        margin-bottom: 0.55rem;
-      }
-
-      .experiment-section p {
-        font-size: 0.95rem;
-      }
-
-      .experiment-section .equation {
-        margin: 1.25rem 0;
-      }
-
-      /* Horizontal rules */
-      hr {
-        border: none;
-        height: 1px;
-        background: var(--border);
-        margin: 2.75rem 0;
-      }
-
-      /* References */
-      .references {
-        margin-top: 3.25rem;
-        padding-top: 2.25rem;
-        border-top: 2px solid var(--border);
-      }
-
-      .references h2 {
-        font-size: 0.95rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 0 0 1.6rem;
-        color: var(--text-primary);
-      }
-
-      .reference-list {
-        font-size: 0.88rem;
-        color: var(--text-secondary);
-        line-height: 1.85;
-      }
-
-      .reference-list p {
-        margin: 0 0 0.85rem;
-        padding-left: 2.25rem;
-        text-indent: -2.25rem;
-        text-align: left;
-      }
-
-      .reference-list a {
-        color: var(--accent);
-        text-decoration: none;
-        word-break: break-all;
-      }
-
-      .reference-list a:hover {
-        color: var(--accent-hover);
-        text-decoration: underline;
-      }
-
-      /* Footer */
-      .paper-footer {
-        margin-top: 3.25rem;
-        padding-top: 1.65rem;
-        border-top: 1px solid var(--border);
-        font-family: "Inter", sans-serif;
-        font-size: 0.67rem;
-        color: var(--text-tertiary);
-        text-align: center;
-        line-height: 1.8;
-      }
-
-      .paper-footer p {
-        margin: 0;
-        text-align: center;
-      }
-
-      /* Selection */
-      ::selection {
-        background: var(--accent);
-        color: var(--bg-paper);
-      }
-
-      /* Print styles */
-      @media print {
-        body {
-          background: white;
-          padding: 0;
-        }
-        .paper {
-          box-shadow: none;
-          max-width: none;
-          padding: 0.75in 1in;
-        }
-      }
-
-      /* Scrollbar styling */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--bg-page);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: var(--border);
-        border-radius: 4px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--text-tertiary);
-      }
-    </style>
-  </head>
-  <body>
-    <article class="paper">
-      <!-- Journal Header -->
-      <header class="journal-header">
-        <div>
-          <div class="journal-name">Theories of Everything</div>
-          <div>A Journal of Unified Science</div>
-        </div>
-        <div class="journal-meta">
-          <div>Volume 1, Issue 1, Article 7</div>
-          <div>November 2025, pp. 1–24</div>
-          <div class="journal-doi">DOI: 10.5281/toe.2025.0107</div>
-        </div>
-      </header>
-
-      <!-- Title -->
-      <h1 class="paper-title">THE DYADIC PLENUM</h1>
-      <p class="paper-subtitle">
-        Dynamic Hyper-Continuum Mechanics (DHCM): A Unified Physics of the
-        Superfluid Vacuum and Consciousness
-      </p>
-
-      <!-- Author -->
-      <div class="author-block">
-        <div class="author-name">Mark A. Banne</div>
-        <div class="author-meta">
-          <span>Principal Investigator</span>
-          <span>November 26, 2025</span>
-          <span
-            >Subject: Grand Unified Theory (Physics, Cosmology,
-            Biophysics)</span
-          >
-        </div>
+<body>
+  <article class="paper">
+    <!-- Journal Header -->
+    <header class="journal-header">
+      <div>
+        <div class="journal-name">Theories of Everything</div>
+        <div>A Journal of Unified Science</div>
       </div>
-
-      <!-- Abstract -->
-      <div class="abstract">
-        <div class="abstract-title">Abstract</div>
-        <p>
-          We present a monolithic theoretical framework that resolves the
-          "Stasis Crisis" in cosmology and the "Binding Problem" in
-          neuroscience. We posit that the fundamental ontological substrate is
-          not a static void, but a <strong>Holostrome</strong>—a non-causal,
-          superfluid plenum characterized by infinite intrinsic velocity and
-          fractal geometry ($D_F \approx 2$). From this axiom, we derive Quantum
-          Mechanics as the hydrodynamic limit of particles navigating a fractal
-          noise floor, and General Relativity as the Bernoulli pressure dynamics
-          of a superfluid vacuum. By adopting a
-          <strong>Logarithmic Superfluid (LogSE)</strong> model, we resolve the
-          Dark Matter crisis as a phase transition from laminar flow (Newtonian)
-          to turbulent vortex shedding (Galactic Halo), without invoking
-          invisible particles. Furthermore, we introduce
-          <strong>Syncytial Field Theory (SFT)</strong>, postulating that
-          Consciousness is a thermodynamic phase transition within the
-          <strong>Astroglial Syncytium</strong>, where discrete neuronal spiking
-          is smoothed into continuous subjective experience via cytoskeletal
-          hysteresis and "Armored" Posner molecule resonance. We conclude with a
-          specific falsification protocol ("The Ghost Cable") designed to
-          isolate non-local field awareness from causal signaling.
-        </p>
+      <div class="journal-meta">
+        <div>Volume 1, Issue 1, Article 7</div>
+        <div>November 2025, pp. 1–24</div>
+        <div class="journal-doi">DOI: 10.5281/toe.2025.0107</div>
       </div>
+    </header>
 
-      <!-- Keywords -->
-      <div class="keywords">
-        <span class="keywords-label">Keywords:</span>
-        <em
-          >Dynamic Hyper-Continuum Mechanics (DHCM), Syncytial Field Theory
-          (SFT), Holostrome, Superfluid Vacuum, Madelung Hydrodynamics, Fractal
-          Kinematics, Dark Matter Turbulence, Astroglial Syncytium, Fröhlich
-          Coherence, Posner Molecules.</em
-        >
+    <!-- Title -->
+    <h1 class="paper-title">THE DYADIC PLENUM</h1>
+    <p class="paper-subtitle">
+      Dynamic Hyper-Continuum Mechanics (DHCM): A Unified Physics of the
+      Superfluid Vacuum and Consciousness
+    </p>
+
+    <!-- Author -->
+    <div class="author-block">
+      <div class="author-name">Mark A. Banne</div>
+      <div class="author-meta">
+        <span>Principal Investigator</span>
+        <span>November 26, 2025</span>
+        <span>Subject: Grand Unified Theory (Physics, Cosmology,
+          Biophysics)</span>
       </div>
+    </div>
 
-      <hr />
-
-      <!-- Section 1 -->
-      <h1 class="section-title">1.0 Introduction: The Ontology of Flux</h1>
-
-      <h2 class="subsection-title">1.1 The Crisis of the Cutoff</h2>
+    <!-- Abstract -->
+    <div class="abstract">
+      <div class="abstract-title">Abstract</div>
       <p>
-        Modern physics has committed a metaphysical sin: the murder of infinity.
-        Confronted with the "ultraviolet catastrophes" of the 20th century,
-        physics chose a pragmatic but conceptually devastating path. We imposed
-        a limit. We accepted the <strong>Planck Length</strong> ($l_P \approx
-        1.6 \times 10^{-35}$ meters) as the absolute "pixel size" of reality.
+        We present a monolithic theoretical framework that resolves the
+        "Stasis Crisis" in cosmology and the "Binding Problem" in
+        neuroscience. We posit that the fundamental ontological substrate is
+        not a static void, but a <strong>Holostrome</strong>—a non-causal,
+        superfluid plenum characterized by infinite intrinsic velocity and
+        fractal geometry ($D_F \approx 2$). From this axiom, we derive Quantum
+        Mechanics as the hydrodynamic limit of particles navigating a fractal
+        noise floor, and General Relativity as the Bernoulli pressure dynamics
+        of a superfluid vacuum. By adopting a
+        <strong>Logarithmic Superfluid (LogSE)</strong> model, we resolve the
+        Dark Matter crisis as a phase transition from laminar flow (Newtonian)
+        to turbulent vortex shedding (Galactic Halo), without invoking
+        invisible particles. Furthermore, we introduce
+        <strong>Syncytial Field Theory (SFT)</strong>, postulating that
+        Consciousness is a thermodynamic phase transition within the
+        <strong>Astroglial Syncytium</strong>, where discrete neuronal spiking
+        is smoothed into continuous subjective experience via cytoskeletal
+        hysteresis and "Armored" Posner molecule resonance. We conclude with a
+        specific falsification protocol ("The Ghost Cable") designed to
+        isolate non-local field awareness from causal signaling.
       </p>
+    </div>
+
+    <!-- Keywords -->
+    <div class="keywords">
+      <span class="keywords-label">Keywords:</span>
+      <em>Dynamic Hyper-Continuum Mechanics (DHCM), Syncytial Field Theory
+        (SFT), Holostrome, Superfluid Vacuum, Madelung Hydrodynamics, Fractal
+        Kinematics, Dark Matter Turbulence, Astroglial Syncytium, Fröhlich
+        Coherence, Posner Molecules.</em>
+    </div>
+
+    <hr />
+
+    <!-- Section 1 -->
+    <h1 class="section-title">1.0 Introduction: The Ontology of Flux</h1>
+
+    <h2 class="subsection-title">1.1 The Crisis of the Cutoff</h2>
+    <p>
+      Modern physics has committed a metaphysical sin: the murder of infinity.
+      Confronted with the "ultraviolet catastrophes" of the 20th century,
+      physics chose a pragmatic but conceptually devastating path. We imposed
+      a limit. We accepted the <strong>Planck Length</strong> ($l_P \approx
+      1.6 \times 10^{-35}$ meters) as the absolute "pixel size" of reality.
+    </p>
+    <p>
+      This assumption—that reality is discrete at the bottom—has led to a
+      catastrophic deadlock. It attempts to model a fluid, living universe as
+      a digital grid. But reality does not feel digital; it feels seamless.
+    </p>
+    <p>
+      <strong>Dynamic Hyper-Continuum Mechanics (DHCM)</strong> begins with a
+      radical counter-axiom: <strong>There is no bottom.</strong> Space and
+      Time are strictly continuous. By embracing the mathematics of the
+      <strong>Hyperreal</strong>, we do not "renormalize" infinity away; we
+      use it as the engine that drives existence.
+    </p>
+
+    <h2 class="subsection-title">1.2 The Rejection of Stasis</h2>
+    <p>Why is there something rather than nothing?</p>
+    <ol>
+      <li>
+        <strong>The Impossibility of Nothingness:</strong> "Nothingness"
+        ($\emptyset$) is a state of perfect uniformity, zero energy, and
+        infinite duration. It is a <strong>Static Infinity</strong>. A system
+        with zero variance ($\sigma^2=0$) possesses no internal mechanism to
+        trigger a phase transition. If "Nothing" ever existed, it would have
+        remained "Nothing" forever. The fact that we exist proves "Nothing" is
+        impossible.
+      </li>
+      <li>
+        <strong>The Failure of the Block Universe:</strong> Similarly, a
+        4-Dimensional "Block Universe" (where Past, Present, and Future exist
+        simultaneously) is a Static Infinity. It requires an external
+        "meta-time" cursor to move through the block to create the sensation
+        of "Now." This leads to an infinite regress.
+      </li>
+    </ol>
+
+    <h2 class="subsection-title">1.3 The Axiom of Flux</h2>
+    <p>
+      If Stasis is impossible, existence must be the result of reality
+      defaulting to the only remaining option: <strong>Instability</strong>.
+    </p>
+    <ul>
+      <li>
+        <strong>The Holostrome:</strong> We define the substrate of reality
+        not as a void, but as a <strong>Holostrome</strong> (The
+        "Whole-Stream"). It is a fractal spacetime plenum that does not
+        "begin" and does not "flow" linearly. It is a state of
+        <strong>Infinite Agitation</strong> (White Noise) without intent or
+        direction.
+      </li>
+      <li>
+        <strong>Fundamental Non-Causality:</strong> This layer is
+        Trans-Causal. It simply <em>is</em>. Causality is an emergent property
+        of the friction within this layer.
+      </li>
+    </ul>
+
+    <h2 class="subsection-title">1.4 The Kinematic Paradox</h2>
+    <p>
+      How does agitation create the physics we know? It arises from the
+      geometry of the medium. If the Holostrome is a fractal manifold, it
+      possesses a fractal dimension $D_F > 1$ (specifically $D_F=2$ at quantum
+      scales).<sup class="cite">[1][2]</sup>
+    </p>
+
+    <div class="derivation">
+      <div class="axiom-label">The Derivation of Infinite Velocity</div>
       <p>
-        This assumption—that reality is discrete at the bottom—has led to a
-        catastrophic deadlock. It attempts to model a fluid, living universe as
-        a digital grid. But reality does not feel digital; it feels seamless.
+        Standard velocity is $v = dx/dt$. However, in a fractal space, the
+        distance $dx$ depends on the resolution scale $dt$. As we zoom in ($dt
+        \to 0$), the "coastline" of space reveals more detail, and the path
+        length $\mathcal{L}$ diverges.<sup class="cite">[1]</sup>
       </p>
-      <p>
-        <strong>Dynamic Hyper-Continuum Mechanics (DHCM)</strong> begins with a
-        radical counter-axiom: <strong>There is no bottom.</strong> Space and
-        Time are strictly continuous. By embracing the mathematics of the
-        <strong>Hyperreal</strong>, we do not "renormalize" infinity away; we
-        use it as the engine that drives existence.
-      </p>
-
-      <h2 class="subsection-title">1.2 The Rejection of Stasis</h2>
-      <p>Why is there something rather than nothing?</p>
-      <ol>
-        <li>
-          <strong>The Impossibility of Nothingness:</strong> "Nothingness"
-          ($\emptyset$) is a state of perfect uniformity, zero energy, and
-          infinite duration. It is a <strong>Static Infinity</strong>. A system
-          with zero variance ($\sigma^2=0$) possesses no internal mechanism to
-          trigger a phase transition. If "Nothing" ever existed, it would have
-          remained "Nothing" forever. The fact that we exist proves "Nothing" is
-          impossible.
-        </li>
-        <li>
-          <strong>The Failure of the Block Universe:</strong> Similarly, a
-          4-Dimensional "Block Universe" (where Past, Present, and Future exist
-          simultaneously) is a Static Infinity. It requires an external
-          "meta-time" cursor to move through the block to create the sensation
-          of "Now." This leads to an infinite regress.
-        </li>
-      </ol>
-
-      <h2 class="subsection-title">1.3 The Axiom of Flux</h2>
-      <p>
-        If Stasis is impossible, existence must be the result of reality
-        defaulting to the only remaining option: <strong>Instability</strong>.
-      </p>
-      <ul>
-        <li>
-          <strong>The Holostrome:</strong> We define the substrate of reality
-          not as a void, but as a <strong>Holostrome</strong> (The
-          "Whole-Stream"). It is a fractal spacetime plenum that does not
-          "begin" and does not "flow" linearly. It is a state of
-          <strong>Infinite Agitation</strong> (White Noise) without intent or
-          direction.
-        </li>
-        <li>
-          <strong>Fundamental Non-Causality:</strong> This layer is
-          Trans-Causal. It simply <em>is</em>. Causality is an emergent property
-          of the friction within this layer.
-        </li>
-      </ul>
-
-      <h2 class="subsection-title">1.4 The Kinematic Paradox</h2>
-      <p>
-        How does agitation create the physics we know? It arises from the
-        geometry of the medium. If the Holostrome is a fractal manifold, it
-        possesses a fractal dimension $D_F > 1$ (specifically $D_F=2$ at quantum
-        scales).<sup class="cite">[1][2]</sup>
-      </p>
-
-      <div class="derivation">
-        <div class="axiom-label">The Derivation of Infinite Velocity</div>
-        <p>
-          Standard velocity is $v = dx/dt$. However, in a fractal space, the
-          distance $dx$ depends on the resolution scale $dt$. As we zoom in ($dt
-          \to 0$), the "coastline" of space reveals more detail, and the path
-          length $\mathcal{L}$ diverges.<sup class="cite">[1]</sup>
-        </p>
-        <div class="equation">$$\mathcal{L}(t) \propto dt^{1-D_F}$$</div>
-        <p>Substituting this into the definition of velocity:</p>
-        <div class="equation">
-          $$|v| = \lim_{dt \to 0} \frac{d\mathcal{L}}{dt} \propto
-          \frac{dt^{1-2}}{dt} = \frac{1}{dt} \to \infty$$
-        </div>
-      </div>
-
-      <div class="conclusion">
-        <div class="conclusion-label">Conclusion</div>
-        <p>
-          At the fundamental level, the vacuum is not empty. It is a plenum
-          characterized by <strong>Infinite Intrinsic Velocity</strong>. Matter
-          is not "stuff" moving through an empty room; Matter is a
-          <strong>Soliton</strong>—a localized knot of coherence maintaining its
-          structural integrity against the drag of a medium that is moving
-          infinitely fast in all directions.
-        </p>
-      </div>
-
-      <hr />
-
-      <!-- Section 2 -->
-      <h1 class="section-title">
-        2.0 Dynamic Hyper-Continuum Mechanics (DHCM)
-      </h1>
-      <p>
-        We now prove that Quantum Mechanics (QM) and General Relativity (GR) are
-        not separate sets of rules, but the inevitable
-        <strong>Hydrodynamic Limits</strong> of this infinite fractal flux.
-      </p>
-
-      <h2 class="subsection-title">
-        2.1 The Dyadic Operators: Drifting and Guiding
-      </h2>
-      <p>
-        Because the Holostrome is non-differentiable (infinitely jagged), the
-        standard time derivative $d/dt$ is undefined. We must decompose time
-        evolution into a <strong>Dyadic Process</strong>—a friction between two
-        opposing forces.
-      </p>
-
-      <ol>
-        <li>
-          <strong>The Forward Derivative ($d_+$) [Semi-Causal]:</strong>
-          <ul>
-            <li><em>Role:</em> <strong>Entropy / Inertia / Past.</strong></li>
-            <li>
-              <em>Nature:</em> Blind, Local. Like gas expanding, it pushes the
-              system blindly forward. It is the chaotic "drift" of the
-              Holostrome.
-            </li>
-          </ul>
-          <div class="equation">
-            $$d_+ \mathbf{x}(t) = \mathbf{b}_+ dt + d\mathbf{W}_+$$
-          </div>
-        </li>
-        <li>
-          <strong>The Backward Derivative ($d_-$) [Non-Causal]:</strong>
-          <ul>
-            <li>
-              <em>Role:</em> <strong>Geometry / Gravity / Future.</strong>
-            </li>
-            <li>
-              <em>Nature:</em> This acts on the configuration of the
-              <strong>Whole Field</strong>. It represents the "pressure" of the
-              future geometry constraining the system. It is the geometric
-              "guide."
-            </li>
-          </ul>
-        </li>
-      </ol>
-
-      <p>
-        We combine these into the complex
-        <strong>Scale-Covariant Derivative</strong>:
-      </p>
+      <div class="equation">$$\mathcal{L}(t) \propto dt^{1-D_F}$$</div>
+      <p>Substituting this into the definition of velocity:</p>
       <div class="equation">
-        $$\frac{\hat{d}}{dt} = \frac{(d_+ + d_-)}{2} - i \frac{(d_+ - d_-)}{2}$$
+        $$|v| = \lim_{dt \to 0} \frac{d\mathcal{L}}{dt} \propto
+        \frac{dt^{1-2}}{dt} = \frac{1}{dt} \to \infty$$
       </div>
-      <div class="equation">
-        $$\frac{\hat{d}}{dt} = \mathbf{V} \cdot \nabla - i \mathcal{D} \Delta +
-        \frac{\partial}{\partial t}$$
-      </div>
+    </div>
 
-      <ul>
-        <li><strong>$\mathbf{V}$:</strong> Classical Velocity (The Flow).</li>
-        <li>
-          <strong>$\mathcal{D}$:</strong> The Diffusion Coefficient (The Fractal
-          Noise Amplitude).
-        </li>
-        <li>
-          <strong>$i$:</strong> The imaginary unit arises physically from the
-          <strong>Orthogonality</strong> between the Direction of Motion (Time)
-          and the Fractal Depth (Space).
-        </li>
-      </ul>
-
-      <h2 class="subsection-title">
-        2.2 The Master Derivation: From Newton to Schrödinger
-      </h2>
+    <div class="conclusion">
+      <div class="conclusion-label">Conclusion</div>
       <p>
-        We now apply Newton's Second Law ($F=ma$) to this fractal fluid. We
-        assume the Holostrome is a force-balanced system.
+        At the fundamental level, the vacuum is not empty. It is a plenum
+        characterized by <strong>Infinite Intrinsic Velocity</strong>. Matter
+        is not "stuff" moving through an empty room; Matter is a
+        <strong>Soliton</strong>—a localized knot of coherence maintaining its
+        structural integrity against the drag of a medium that is moving
+        infinitely fast in all directions.
       </p>
+    </div>
 
-      <p><strong>The Classical Law:</strong></p>
-      <div class="equation">$$m \frac{\hat{d}\mathbf{V}}{dt} = -\nabla U$$</div>
-      <p class="equation-note">
-        (Mass × Acceleration = External Potential Gradient)
-      </p>
+    <hr />
 
-      <p>
-        Expanding the Scale-Covariant Derivative ($\hat{d}/dt$) reveals the
-        hidden terms. After separating the Real and Imaginary parts, we obtain
-        the <strong>Quantum Euler Equation</strong>:<sup class="cite">[3]</sup>
-      </p>
+    <!-- Section 2 -->
+    <h1 class="section-title">
+      2.0 Dynamic Hyper-Continuum Mechanics (DHCM)
+    </h1>
+    <p>
+      We now prove that Quantum Mechanics (QM) and General Relativity (GR) are
+      not separate sets of rules, but the inevitable
+      <strong>Hydrodynamic Limits</strong> of this infinite fractal flux.
+    </p>
 
-      <div class="equation">
-        $$\underbrace{\frac{\partial \mathbf{V}}{\partial t} + (\mathbf{V} \cdot
-        \nabla) \mathbf{V}}_{\text{Classical Inertia}} =
-        \underbrace{-\frac{\nabla U}{m}}_{\text{External Force}} +
-        \underbrace{\frac{\hbar^2}{2m^2} \nabla \left( \frac{\Delta
-        \sqrt{\rho}}{\sqrt{\rho}} \right)}_{\text{THE QUANTUM POTENTIAL (Q)}}$$
-      </div>
+    <h2 class="subsection-title">
+      2.1 The Dyadic Operators: Drifting and Guiding
+    </h2>
+    <p>
+      Because the Holostrome is non-differentiable (infinitely jagged), the
+      standard time derivative $d/dt$ is undefined. We must decompose time
+      evolution into a <strong>Dyadic Process</strong>—a friction between two
+      opposing forces.
+    </p>
 
-      <div class="axiom">
-        <div class="axiom-label">The Unveiling</div>
-        <p>
-          If we define the wavefunction $\psi = \sqrt{\rho} e^{iS/\hbar}$, this
-          hydrodynamic equation is <strong>mathematically identical</strong> to
-          the <strong>Schrödinger Equation</strong>.<sup class="cite">[3]</sup>
-        </p>
-      </div>
-
-      <p>
-        <strong>Implication:</strong> We have demystified Quantum Mechanics. The
-        "Wavefunction" is real fluid dynamics.
-      </p>
-      <ul>
-        <li>$\sqrt{\rho}$: The density of the Holostrome fluid.</li>
-        <li>
-          <strong>$Q$ (Quantum Potential):</strong> This mysterious term is the
-          <strong>Osmotic Pressure</strong> of the vacuum. It is the force of
-          the Fractal Geometry ($d_-$) pushing back against the particle's
-          localization.
-        </li>
-      </ul>
-
-      <h2 class="subsection-title">
-        2.3 Explaining Quantum Phenomena via Hydrodynamics
-      </h2>
-      <p>
-        With the Master Equation established, "spooky" quantum phenomena become
-        explainable mechanical effects of the Holostrome.
-      </p>
-
-      <h3 class="subsubsection-title">A. Entanglement: Hydraulic Rigidity</h3>
-      <p>
-        Standard physics views entanglement as a paradox where information
-        travels faster than light ($v > c$). In DHCM, this is a category error.
-      </p>
-      <div class="mechanism">
-        <div class="mechanism-title">The Mechanism</div>
-        <p>
-          Treat the Holostrome as a <strong>Superfluid</strong>. In an ideal
-          incompressible fluid, the "Speed of Sound" (pressure propagation) is
-          infinite ($c_s \to \infty$).
-        </p>
-        <p>
-          <strong>Pascal's Principle of the Vacuum:</strong> If you have a rigid
-          rod (or an incompressible flux tube) connecting Point A and Point B,
-          pushing A moves B <em>instantly</em>.
-        </p>
-        <p>
-          <strong>Conclusion:</strong> Entangled particles are not two separate
-          objects signaling each other. They are two ends of a single
-          <strong>Vortex Line</strong> in the Holostrome. Because the medium
-          possesses Infinite Intrinsic Velocity, it acts with
-          <strong>Absolute Rigidity</strong>. The connection is non-local
-          because the medium itself is effectively $size=0$ from the perspective
-          of the pressure wave.
-        </p>
-      </div>
-
-      <h3 class="subsubsection-title">
-        B. The Double Slit: Pilot Wave Interference
-      </h3>
-      <p>Why does a single particle create an interference pattern?</p>
-      <ul>
-        <li>
-          <strong>The Particle:</strong> Goes through <strong>one</strong> slit.
-        </li>
-        <li>
-          <strong>The Wave (Holostrome):</strong> Goes through
-          <strong>both</strong> slits.
-        </li>
-        <li>
-          <strong>The Mechanism:</strong> The particle is a surfer. The "water"
-          (Holostrome) crashes through the two slits, creating a complex
-          interference pattern of ripples on the other side. The particle,
-          guided by the <strong>Quantum Potential ($Q$)</strong>, effectively
-          "surfs" these ripples to its final location. The particle does not
-          "know" about the other slit; the <em>Space</em> knows, and the Space
-          pushes the particle.
-        </li>
-      </ul>
-
-      <h3 class="subsubsection-title">C. Tunneling: The Fractal Hop</h3>
-      <p>How does a particle pass through a solid wall?</p>
-      <ul>
-        <li><strong>Standard View:</strong> Probability magic.</li>
-        <li>
-          <strong>DHCM View:</strong>
-          <strong>Turbulent Trajectory.</strong> Recall that the path is fractal
-          ($D_F=2$). This means the trajectory is infinitely jagged.
-          Occasionally, the <strong>Brownian Motion</strong> of the background
-          Holostrome provides a "kick" (Kinetic Energy fluctuation) that exceeds
-          the Potential Energy of the barrier ($E_k > U$). The particle does not
-          "ghost" through the wall; it is <strong>thrown</strong> over the wall
-          by a rogue wave in the vacuum fluctuations.
-        </li>
-      </ul>
-
-      <hr />
-
-      <!-- Section 3 -->
-      <h1 class="section-title">
-        3.0 Reconciling the Giants: Gravity &amp; the Superfluid Vacuum
-      </h1>
-      <p>
-        We have unified Quantum Mechanics with Hydrodynamics. Now we must unify
-        Gravity. Standard General Relativity (GR) treats spacetime as a
-        geometry. DHCM asserts that this geometry is merely the
-        <strong>macroscopic pressure map</strong> of the underlying Holostrome
-        fluid.<sup class="cite">[4]</sup>
-      </p>
-
-      <h2 class="subsection-title">3.1 Gravity as Bernoulli Pressure</h2>
-      <p>
-        If the Holostrome is a fluid, Gravity is not a "force" or a "curve"—it
-        is <strong>Suction</strong>.
-      </p>
-      <p>According to Bernoulli's Principle for a superfluid:</p>
-      <div class="equation">
-        $$\frac{1}{2} v^2 + \int \frac{dP}{\rho} + \Phi = \text{Constant}$$
-      </div>
-      <div class="mechanism">
-        <div class="mechanism-title">The Mechanism</div>
-        <p>
-          A massive object (like Earth) acts as a
-          <strong>Coherence Sink</strong>. It lowers the local density ($\rho$)
-          of the Holostrome by binding the vacuum energy into matter (Solitons).
-        </p>
-        <p>
-          <strong>The Flow:</strong> The surrounding infinite vacuum (which has
-          high density/pressure) rushes in to fill the "low pressure" zone
-          created by the mass.
-        </p>
-        <p>
-          <strong>The Result:</strong> Gravity is the
-          <strong>Osmotic Pressure</strong> of the universe pushing you down,
-          not the Earth pulling you.
-        </p>
-      </div>
-
-      <h2 class="subsection-title">
-        3.2 The Dark Matter Crisis: A Hydrodynamic Solution
-      </h2>
-      <p>
-        Standard Gravity ($\Lambda$CDM) is currently failing. It cannot explain
-        the rotation speeds of galaxies without inventing "Dark Matter"
-        (invisible particles we cannot find). DHCM solves this by adopting the
-        <strong>Logarithmic Superfluid Vacuum (LogSE)</strong> model, which has
-        two distinct phases.<sup class="cite">[4]</sup>
-      </p>
-
-      <p>
-        <strong>The Phase Transition:</strong> A superfluid flows without
-        friction only below a critical velocity ($v_c$). Above this speed, it
-        breaks down and becomes turbulent.
-      </p>
-
-      <div class="regime">
-        <div class="regime-header">Regime A: The Solar System ($v < v_c$)</div>
+    <ol>
+      <li>
+        <strong>The Forward Derivative ($d_+$) [Semi-Causal]:</strong>
         <ul>
+          <li><em>Role:</em> <strong>Entropy / Inertia / Past.</strong></li>
           <li>
-            <strong>State:</strong> The Holostrome is a
-            <strong>Laminar Superfluid</strong>.
-          </li>
-          <li><strong>Physics:</strong> Viscosity = 0. Drag = 0.</li>
-          <li>
-            <strong>Result:</strong> Planets orbit according to standard
-            Newton/Einstein laws.
-          </li>
-          <li>
-            <strong>Validation:</strong> This explains why we see
-            <strong>no Dark Matter effects</strong> in our solar system or in
-            <strong>Wide Binary Stars</strong> (Banik et al., 2024).<sup
-              class="cite"
-              >[5]</sup
-            >
+            <em>Nature:</em> Blind, Local. Like gas expanding, it pushes the
+            system blindly forward. It is the chaotic "drift" of the
+            Holostrome.
           </li>
         </ul>
+        <div class="equation">
+          $$d_+ \mathbf{x}(t) = \mathbf{b}_+ dt + d\mathbf{W}_+$$
+        </div>
+      </li>
+      <li>
+        <strong>The Backward Derivative ($d_-$) [Non-Causal]:</strong>
+        <ul>
+          <li>
+            <em>Role:</em> <strong>Geometry / Gravity / Future.</strong>
+          </li>
+          <li>
+            <em>Nature:</em> This acts on the configuration of the
+            <strong>Whole Field</strong>. It represents the "pressure" of the
+            future geometry constraining the system. It is the geometric
+            "guide."
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>
+      We combine these into the complex
+      <strong>Scale-Covariant Derivative</strong>:
+    </p>
+    <div class="equation">
+      $$\frac{\hat{d}}{dt} = \frac{(d_+ + d_-)}{2} - i \frac{(d_+ - d_-)}{2}$$
+    </div>
+    <div class="equation">
+      $$\frac{\hat{d}}{dt} = \mathbf{V} \cdot \nabla - i \mathcal{D} \Delta +
+      \frac{\partial}{\partial t}$$
+    </div>
+
+    <ul>
+      <li><strong>$\mathbf{V}$:</strong> Classical Velocity (The Flow).</li>
+      <li>
+        <strong>$\mathcal{D}$:</strong> The Diffusion Coefficient (The Fractal
+        Noise Amplitude).
+      </li>
+      <li>
+        <strong>$i$:</strong> The imaginary unit arises physically from the
+        <strong>Orthogonality</strong> between the Direction of Motion (Time)
+        and the Fractal Depth (Space).
+      </li>
+    </ul>
+
+    <h2 class="subsection-title">
+      2.2 The Master Derivation: From Newton to Schrödinger
+    </h2>
+    <p>
+      We now apply Newton's Second Law ($F=ma$) to this fractal fluid. We
+      assume the Holostrome is a force-balanced system.
+    </p>
+
+    <p><strong>The Classical Law:</strong></p>
+    <div class="equation">$$m \frac{\hat{d}\mathbf{V}}{dt} = -\nabla U$$</div>
+    <p class="equation-note">
+      (Mass × Acceleration = External Potential Gradient)
+    </p>
+
+    <p>
+      Expanding the Scale-Covariant Derivative ($\hat{d}/dt$) reveals the
+      hidden terms. After separating the Real and Imaginary parts, we obtain
+      the <strong>Quantum Euler Equation</strong>:<sup class="cite">[3]</sup>
+    </p>
+
+    <div class="equation">
+      $$\underbrace{\frac{\partial \mathbf{V}}{\partial t} + (\mathbf{V} \cdot
+      \nabla) \mathbf{V}}_{\text{Classical Inertia}} =
+      \underbrace{-\frac{\nabla U}{m}}_{\text{External Force}} +
+      \underbrace{\frac{\hbar^2}{2m^2} \nabla \left( \frac{\Delta
+      \sqrt{\rho}}{\sqrt{\rho}} \right)}_{\text{THE QUANTUM POTENTIAL (Q)}}$$
+    </div>
+
+    <div class="axiom">
+      <div class="axiom-label">The Unveiling</div>
+      <p>
+        If we define the wavefunction $\psi = \sqrt{\rho} e^{iS/\hbar}$, this
+        hydrodynamic equation is <strong>mathematically identical</strong> to
+        the <strong>Schrödinger Equation</strong>.<sup class="cite">[3]</sup>
+      </p>
+    </div>
+
+    <p>
+      <strong>Implication:</strong> We have demystified Quantum Mechanics. The
+      "Wavefunction" is real fluid dynamics.
+    </p>
+    <ul>
+      <li>$\sqrt{\rho}$: The density of the Holostrome fluid.</li>
+      <li>
+        <strong>$Q$ (Quantum Potential):</strong> This mysterious term is the
+        <strong>Osmotic Pressure</strong> of the vacuum. It is the force of
+        the Fractal Geometry ($d_-$) pushing back against the particle's
+        localization.
+      </li>
+    </ul>
+
+    <h2 class="subsection-title">
+      2.3 Explaining Quantum Phenomena via Hydrodynamics
+    </h2>
+    <p>
+      With the Master Equation established, "spooky" quantum phenomena become
+      explainable mechanical effects of the Holostrome.
+    </p>
+
+    <h3 class="subsubsection-title">A. Entanglement: Hydraulic Rigidity</h3>
+    <p>
+      Standard physics views entanglement as a paradox where information
+      travels faster than light ($v > c$). In DHCM, this is a category error.
+    </p>
+    <div class="mechanism">
+      <div class="mechanism-title">The Mechanism</div>
+      <p>
+        Treat the Holostrome as a <strong>Superfluid</strong>. In an ideal
+        incompressible fluid, the "Speed of Sound" (pressure propagation) is
+        infinite ($c_s \to \infty$).
+      </p>
+      <p>
+        <strong>Pascal's Principle of the Vacuum:</strong> If you have a rigid
+        rod (or an incompressible flux tube) connecting Point A and Point B,
+        pushing A moves B <em>instantly</em>.
+      </p>
+      <p>
+        <strong>Conclusion:</strong> Entangled particles are not two separate
+        objects signaling each other. They are two ends of a single
+        <strong>Vortex Line</strong> in the Holostrome. Because the medium
+        possesses Infinite Intrinsic Velocity, it acts with
+        <strong>Absolute Rigidity</strong>. The connection is non-local
+        because the medium itself is effectively $size=0$ from the perspective
+        of the pressure wave.
+      </p>
+    </div>
+
+    <h3 class="subsubsection-title">
+      B. The Double Slit: Pilot Wave Interference
+    </h3>
+    <p>Why does a single particle create an interference pattern?</p>
+    <ul>
+      <li>
+        <strong>The Particle:</strong> Goes through <strong>one</strong> slit.
+      </li>
+      <li>
+        <strong>The Wave (Holostrome):</strong> Goes through
+        <strong>both</strong> slits.
+      </li>
+      <li>
+        <strong>The Mechanism:</strong> The particle is a surfer. The "water"
+        (Holostrome) crashes through the two slits, creating a complex
+        interference pattern of ripples on the other side. The particle,
+        guided by the <strong>Quantum Potential ($Q$)</strong>, effectively
+        "surfs" these ripples to its final location. The particle does not
+        "know" about the other slit; the <em>Space</em> knows, and the Space
+        pushes the particle.
+      </li>
+    </ul>
+
+    <h3 class="subsubsection-title">C. Tunneling: The Fractal Hop</h3>
+    <p>How does a particle pass through a solid wall?</p>
+    <ul>
+      <li><strong>Standard View:</strong> Probability magic.</li>
+      <li>
+        <strong>DHCM View:</strong>
+        <strong>Turbulent Trajectory.</strong> Recall that the path is fractal
+        ($D_F=2$). This means the trajectory is infinitely jagged.
+        Occasionally, the <strong>Brownian Motion</strong> of the background
+        Holostrome provides a "kick" (Kinetic Energy fluctuation) that exceeds
+        the Potential Energy of the barrier ($E_k > U$). The particle does not
+        "ghost" through the wall; it is <strong>thrown</strong> over the wall
+        by a rogue wave in the vacuum fluctuations.
+      </li>
+    </ul>
+
+    <hr />
+
+    <!-- Section 3 -->
+    <h1 class="section-title">
+      3.0 Reconciling the Giants: Gravity &amp; the Superfluid Vacuum
+    </h1>
+    <p>
+      We have unified Quantum Mechanics with Hydrodynamics. Now we must unify
+      Gravity. Standard General Relativity (GR) treats spacetime as a
+      geometry. DHCM asserts that this geometry is merely the
+      <strong>macroscopic pressure map</strong> of the underlying Holostrome
+      fluid.<sup class="cite">[4]</sup>
+    </p>
+
+    <h2 class="subsection-title">3.1 Gravity as Bernoulli Pressure</h2>
+    <p>
+      If the Holostrome is a fluid, Gravity is not a "force" or a "curve"—it
+      is <strong>Suction</strong>.
+    </p>
+    <p>According to Bernoulli's Principle for a superfluid:</p>
+    <div class="equation">
+      $$\frac{1}{2} v^2 + \int \frac{dP}{\rho} + \Phi = \text{Constant}$$
+    </div>
+    <div class="mechanism">
+      <div class="mechanism-title">The Mechanism</div>
+      <p>
+        A massive object (like Earth) acts as a
+        <strong>Coherence Sink</strong>. It lowers the local density ($\rho$)
+        of the Holostrome by binding the vacuum energy into matter (Solitons).
+      </p>
+      <p>
+        <strong>The Flow:</strong> The surrounding infinite vacuum (which has
+        high density/pressure) rushes in to fill the "low pressure" zone
+        created by the mass.
+      </p>
+      <p>
+        <strong>The Result:</strong> Gravity is the
+        <strong>Osmotic Pressure</strong> of the universe pushing you down,
+        not the Earth pulling you.
+      </p>
+    </div>
+
+    <h2 class="subsection-title">
+      3.2 The Dark Matter Crisis: A Hydrodynamic Solution
+    </h2>
+    <p>
+      Standard Gravity ($\Lambda$CDM) is currently failing. It cannot explain
+      the rotation speeds of galaxies without inventing "Dark Matter"
+      (invisible particles we cannot find). DHCM solves this by adopting the
+      <strong>Logarithmic Superfluid Vacuum (LogSE)</strong> model, which has
+      two distinct phases.<sup class="cite">[4]</sup>
+    </p>
+
+    <p>
+      <strong>The Phase Transition:</strong> A superfluid flows without
+      friction only below a critical velocity ($v_c$). Above this speed, it
+      breaks down and becomes turbulent.
+    </p>
+
+    <div class="regime">
+      <div class="regime-header">Regime A: The Solar System ($v < v_c$)</div>
+          <ul>
+            <li>
+              <strong>State:</strong> The Holostrome is a
+              <strong>Laminar Superfluid</strong>.
+            </li>
+            <li><strong>Physics:</strong> Viscosity = 0. Drag = 0.</li>
+            <li>
+              <strong>Result:</strong> Planets orbit according to standard
+              Newton/Einstein laws.
+            </li>
+            <li>
+              <strong>Validation:</strong> This explains why we see
+              <strong>no Dark Matter effects</strong> in our solar system or in
+              <strong>Wide Binary Stars</strong> (Banik et al., 2024).<sup class="cite">[5]</sup>
+            </li>
+          </ul>
       </div>
 
       <div class="regime">
@@ -1154,9 +1148,7 @@
           </p>
         </li>
         <li>
-          <strong
-            >Phase II: Sympathetic Resonance (Astroglial Microtubules).</strong
-          >
+          <strong>Phase II: Sympathetic Resonance (Astroglial Microtubules).</strong>
           <p>
             The astrocyte process, which tightly wraps the synapse (the
             Tripartite Synapse), is subjected to this massive electromagnetic
@@ -1352,10 +1344,7 @@
         <p>
           To determine if the Syncytial Field utilizes
           <strong>Quantum Resonance</strong> or purely
-          <strong>Classical Hysteresis</strong>, we exploit Nuclear Spin.<sup
-            class="cite"
-            >[9]</sup
-          >
+          <strong>Classical Hysteresis</strong>, we exploit Nuclear Spin.<sup class="cite">[9]</sup>
         </p>
 
         <div class="experiment-section">
@@ -1438,10 +1427,8 @@
         <div class="reference-list">
           <p>
             [1] Nottale, L. (1993).
-            <em
-              >Fractal Space-Time and Microphysics: Towards a Theory of Scale
-              Relativity</em
-            >. World Scientific.
+            <em>Fractal Space-Time and Microphysics: Towards a Theory of Scale
+              Relativity</em>. World Scientific.
           </p>
           <p>
             [2] Goldfain, E. (2014). Fractal Spacetime as Underlying Structure
@@ -1464,13 +1451,9 @@
           </p>
           <p>
             [6] Banne, M. A. (2025).
-            <em
-              >The Continuous Mind: A Syncytial Field Theory of
-              Consciousness</em
-            >. Zenodo.
-            <a href="https://doi.org/10.5281/zenodo.17488430"
-              >https://doi.org/10.5281/zenodo.17488430</a
-            >
+            <em>The Continuous Mind: A Syncytial Field Theory of
+              Consciousness</em>. Zenodo.
+            <a href="https://doi.org/10.5281/zenodo.17488430">https://doi.org/10.5281/zenodo.17488430</a>
           </p>
           <p>
             [7] Robertson, J. M. (2013). Astrocytes and the Evolution of the
@@ -1498,18 +1481,19 @@
           November 26, 2025
         </p>
       </footer>
-    </article>
+  </article>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-          delimiters: [
-            { left: "$$", right: "$$", display: true },
-            { left: "$", right: "$", display: false },
-          ],
-          throwOnError: false,
-        });
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+        throwOnError: false,
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
