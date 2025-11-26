@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -36,6 +36,7 @@
         --text-secondary: #5c5751;
         --text-tertiary: #8a847b;
         --accent: #6b5c4c;
+        --accent-light: #8b7a68;
         --accent-hover: #4a3f35;
         --border: #e5e2dc;
         --border-light: #efece7;
@@ -43,7 +44,6 @@
         --shadow-strong: rgba(45, 42, 38, 0.12);
         --highlight: #f0ebe3;
         --abstract-bg: #faf8f5;
-        --equation-bg: transparent;
       }
 
       @media (prefers-color-scheme: dark) {
@@ -54,6 +54,7 @@
           --text-secondary: #b5aea4;
           --text-tertiary: #7d766c;
           --accent: #c9b99a;
+          --accent-light: #a89878;
           --accent-hover: #ddd0b5;
           --border: #2e2b27;
           --border-light: #252320;
@@ -61,7 +62,6 @@
           --shadow-strong: rgba(0, 0, 0, 0.4);
           --highlight: #252320;
           --abstract-bg: #1f1d1a;
-          --equation-bg: transparent;
         }
       }
 
@@ -72,17 +72,17 @@
       }
 
       html {
-        font-size: 16px;
+        font-size: 18px;
         scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
-        padding: 2rem 1rem 4rem;
+        padding: 2.5rem 1rem 4rem;
         background: var(--bg-page);
         color: var(--text-primary);
-        font-family: "STIX Two Text", "Times New Roman", Georgia, serif;
-        line-height: 1.7;
+        font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+        line-height: 1.75;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         transition:
@@ -92,10 +92,10 @@
 
       /* Paper container */
       .paper {
-        max-width: 52rem;
+        max-width: 58rem;
         margin: 0 auto;
         background: var(--bg-paper);
-        padding: 3rem 4rem 4rem;
+        padding: 3.5rem 5rem 4.5rem;
         box-shadow:
           0 1px 3px var(--shadow),
           0 8px 30px var(--shadow),
@@ -104,7 +104,10 @@
         position: relative;
       }
 
-      @media (max-width: 720px) {
+      @media (max-width: 800px) {
+        html {
+          font-size: 17px;
+        }
         body {
           padding: 1rem 0.5rem 3rem;
         }
@@ -119,13 +122,13 @@
         justify-content: space-between;
         align-items: flex-start;
         padding-bottom: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.25rem;
         border-bottom: 1px solid var(--border);
         font-family:
           "Inter",
           -apple-system,
           sans-serif;
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         color: var(--text-tertiary);
         letter-spacing: 0.02em;
       }
@@ -133,9 +136,9 @@
       .journal-name {
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.12em;
         color: var(--text-secondary);
-        font-size: 0.7rem;
+        font-size: 0.67rem;
       }
 
       .journal-meta {
@@ -145,40 +148,41 @@
 
       .journal-doi {
         font-family: "JetBrains Mono", monospace;
-        font-size: 0.65rem;
+        font-size: 0.61rem;
         color: var(--text-tertiary);
         margin-top: 0.25rem;
       }
 
       /* Title section */
       .paper-title {
-        font-size: 1.9rem;
+        font-size: 2.1rem;
         font-weight: 700;
-        line-height: 1.25;
-        margin: 0 0 0.5rem;
+        line-height: 1.2;
+        margin: 0 0 0.6rem;
         color: var(--text-primary);
         letter-spacing: -0.01em;
       }
 
       .paper-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         font-weight: 400;
         color: var(--text-secondary);
-        margin: 0 0 2rem;
+        margin: 0 0 2.25rem;
         line-height: 1.5;
       }
 
       /* Author info */
       .author-block {
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.5rem;
+        margin-bottom: 2.75rem;
+        padding-bottom: 1.75rem;
         border-bottom: 1px solid var(--border-light);
       }
 
       .author-name {
         font-weight: 600;
+        font-size: 1.05rem;
         color: var(--text-primary);
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.3rem;
       }
 
       .author-meta {
@@ -194,20 +198,20 @@
       /* Abstract */
       .abstract {
         background: var(--abstract-bg);
-        padding: 1.75rem 2rem;
-        margin: 0 0 2rem;
+        padding: 1.85rem 2.25rem;
+        margin: 0 0 2.25rem;
         border-left: 3px solid var(--accent);
-        border-radius: 0 3px 3px 0;
+        border-radius: 0 4px 4px 0;
       }
 
       .abstract-title {
         font-family: "Inter", sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.67rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.12em;
         color: var(--text-tertiary);
-        margin: 0 0 0.75rem;
+        margin: 0 0 0.85rem;
       }
 
       .abstract p {
@@ -219,7 +223,7 @@
 
       /* Keywords */
       .keywords {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
         color: var(--text-secondary);
         margin-bottom: 3rem;
       }
@@ -233,36 +237,57 @@
         font-style: italic;
       }
 
+      /* Citation superscripts */
+      sup.cite {
+        font-size: 0.65em;
+        font-weight: 500;
+        color: var(--accent-light);
+        margin-left: 1px;
+        font-family: "Inter", sans-serif;
+        vertical-align: super;
+        line-height: 0;
+      }
+
+      sup.cite a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      sup.cite a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
+      }
+
       /* Section headings */
       h1.section-title {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin: 3rem 0 1.5rem;
-        padding-bottom: 0.5rem;
+        letter-spacing: 0.06em;
+        margin: 3.25rem 0 1.6rem;
+        padding-bottom: 0.55rem;
         border-bottom: 2px solid var(--border);
         color: var(--text-primary);
       }
 
       h2.subsection-title {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         font-weight: 600;
-        margin: 2.25rem 0 1rem;
+        margin: 2.5rem 0 1.1rem;
         color: var(--text-primary);
       }
 
       h3.subsubsection-title {
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: 600;
         font-style: italic;
-        margin: 1.75rem 0 0.75rem;
+        margin: 2rem 0 0.85rem;
         color: var(--text-primary);
       }
 
       /* Paragraphs */
       p {
-        margin: 0 0 1rem;
+        margin: 0 0 1.1rem;
         text-align: justify;
         hyphens: auto;
       }
@@ -270,17 +295,23 @@
       /* Lists */
       ol,
       ul {
-        margin: 1rem 0 1.5rem 1.5rem;
+        margin: 1.1rem 0 1.6rem 1.6rem;
         padding: 0;
       }
 
       li {
-        margin-bottom: 0.75rem;
-        padding-left: 0.25rem;
+        margin-bottom: 0.8rem;
+        padding-left: 0.3rem;
       }
 
       li > strong {
         color: var(--text-primary);
+      }
+
+      li ul,
+      li ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
       /* Blockquotes / Important statements */
@@ -288,8 +319,8 @@
       .conclusion,
       .derivation {
         background: var(--highlight);
-        padding: 1.25rem 1.5rem;
-        margin: 1.5rem 0;
+        padding: 1.35rem 1.65rem;
+        margin: 1.6rem 0;
         border-radius: 4px;
         border-left: 3px solid var(--accent);
       }
@@ -297,44 +328,51 @@
       .axiom-label,
       .conclusion-label {
         font-family: "Inter", sans-serif;
-        font-size: 0.65rem;
+        font-size: 0.61rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: var(--accent);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .axiom p,
+      .conclusion p,
+      .derivation p {
+        margin-bottom: 0.8rem;
+      }
+
+      .axiom p:last-child,
+      .conclusion p:last-child,
+      .derivation p:last-child {
+        margin-bottom: 0;
       }
 
       /* Equations */
       .equation {
-        margin: 1.75rem 0;
+        margin: 1.85rem 0;
         padding: 1rem 0;
         overflow-x: auto;
         text-align: center;
       }
 
-      .equation-labeled {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
+      .equation-note {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        margin-top: -1rem;
+        margin-bottom: 1.5rem;
       }
 
-      .equation-number {
-        font-size: 0.85rem;
-        color: var(--text-tertiary);
-        flex-shrink: 0;
-      }
-
-      /* Inline math */
+      /* KaTeX sizing */
       .katex {
-        font-size: 1em;
+        font-size: 1.05em;
       }
 
       /* Mechanism boxes */
       .mechanism {
-        margin: 1.5rem 0;
-        padding: 1rem 1.5rem;
+        margin: 1.6rem 0;
+        padding: 1.15rem 1.5rem;
         background: var(--abstract-bg);
         border-radius: 4px;
       }
@@ -342,93 +380,22 @@
       .mechanism-title {
         font-weight: 600;
         color: var(--accent);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.55rem;
+        font-size: 0.95rem;
       }
 
-      /* Explanation lists (like in quantum phenomena section) */
-      .explanation-item {
-        margin: 1.25rem 0;
-        padding-left: 1rem;
-        border-left: 2px solid var(--border);
+      .mechanism p {
+        margin-bottom: 0.7rem;
       }
 
-      .explanation-item strong {
-        display: block;
-        margin-bottom: 0.25rem;
-      }
-
-      /* Underbrace labels */
-      .underbrace-group {
-        text-align: center;
-      }
-
-      /* References */
-      .references {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 2px solid var(--border);
-      }
-
-      .references h2 {
-        font-size: 0.9rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin: 0 0 1.5rem;
-        color: var(--text-primary);
-      }
-
-      .reference-list {
-        font-size: 0.85rem;
-        color: var(--text-secondary);
-        line-height: 1.8;
-      }
-
-      .reference-list p {
-        margin: 0 0 0.75rem;
-        padding-left: 2rem;
-        text-indent: -2rem;
-        text-align: left;
-      }
-
-      .reference-list a {
-        color: var(--accent);
-        text-decoration: none;
-        word-break: break-all;
-      }
-
-      .reference-list a:hover {
-        color: var(--accent-hover);
-        text-decoration: underline;
-      }
-
-      /* Emphasis and formatting */
-      strong {
-        font-weight: 600;
-      }
-
-      em {
-        font-style: italic;
-      }
-
-      /* Horizontal rules */
-      hr {
-        border: none;
-        height: 1px;
-        background: var(--border);
-        margin: 2.5rem 0;
-      }
-
-      /* Selection */
-      ::selection {
-        background: var(--accent);
-        color: var(--bg-paper);
+      .mechanism p:last-child {
+        margin-bottom: 0;
       }
 
       /* Phase/regime boxes */
       .regime {
-        margin: 1.25rem 0;
-        padding: 1rem 1.25rem;
+        margin: 1.35rem 0;
+        padding: 1.1rem 1.35rem;
         background: var(--highlight);
         border-radius: 4px;
       }
@@ -436,7 +403,7 @@
       .regime-header {
         font-weight: 600;
         color: var(--text-primary);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.55rem;
       }
 
       .regime p,
@@ -451,47 +418,117 @@
       }
 
       .regime li {
-        margin-bottom: 0.35rem;
+        margin-bottom: 0.4rem;
       }
 
       /* Experiment sections */
       .experiment {
-        margin: 2rem 0;
-        padding: 1.5rem;
+        margin: 2.25rem 0;
+        padding: 1.65rem 1.85rem;
         background: var(--abstract-bg);
         border-radius: 6px;
         border: 1px solid var(--border-light);
       }
 
       .experiment h4 {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         font-weight: 600;
-        margin: 0 0 1rem;
+        margin: 0 0 1.1rem;
         color: var(--text-primary);
       }
 
       .experiment-section {
-        margin: 1rem 0;
+        margin: 1.1rem 0;
       }
 
-      .experiment-section strong {
+      .experiment-section > strong {
         display: block;
-        font-size: 0.8rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.06em;
         color: var(--accent);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .experiment-section p {
+        font-size: 0.95rem;
+      }
+
+      .experiment-section .equation {
+        margin: 1.25rem 0;
+      }
+
+      /* Horizontal rules */
+      hr {
+        border: none;
+        height: 1px;
+        background: var(--border);
+        margin: 2.75rem 0;
+      }
+
+      /* References */
+      .references {
+        margin-top: 3.25rem;
+        padding-top: 2.25rem;
+        border-top: 2px solid var(--border);
+      }
+
+      .references h2 {
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 0 0 1.6rem;
+        color: var(--text-primary);
+      }
+
+      .reference-list {
+        font-size: 0.88rem;
+        color: var(--text-secondary);
+        line-height: 1.85;
+      }
+
+      .reference-list p {
+        margin: 0 0 0.85rem;
+        padding-left: 2.25rem;
+        text-indent: -2.25rem;
+        text-align: left;
+      }
+
+      .reference-list a {
+        color: var(--accent);
+        text-decoration: none;
+        word-break: break-all;
+      }
+
+      .reference-list a:hover {
+        color: var(--accent-hover);
+        text-decoration: underline;
       }
 
       /* Footer */
       .paper-footer {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
+        margin-top: 3.25rem;
+        padding-top: 1.65rem;
         border-top: 1px solid var(--border);
         font-family: "Inter", sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.67rem;
         color: var(--text-tertiary);
         text-align: center;
+        line-height: 1.8;
+      }
+
+      .paper-footer p {
+        margin: 0;
+        text-align: center;
+      }
+
+      /* Selection */
+      ::selection {
+        background: var(--accent);
+        color: var(--bg-paper);
       }
 
       /* Print styles */
@@ -503,7 +540,7 @@
         .paper {
           box-shadow: none;
           max-width: none;
-          padding: 1in;
+          padding: 0.75in 1in;
         }
       }
 
@@ -673,7 +710,7 @@
         How does agitation create the physics we know? It arises from the
         geometry of the medium. If the Holostrome is a fractal manifold, it
         possesses a fractal dimension $D_F > 1$ (specifically $D_F=2$ at quantum
-        scales) [1][2].
+        scales).<sup class="cite">[1][2]</sup>
       </p>
 
       <div class="derivation">
@@ -682,7 +719,7 @@
           Standard velocity is $v = dx/dt$. However, in a fractal space, the
           distance $dx$ depends on the resolution scale $dt$. As we zoom in ($dt
           \to 0$), the "coastline" of space reveals more detail, and the path
-          length $\mathcal{L}$ diverges [1].
+          length $\mathcal{L}$ diverges.<sup class="cite">[1]</sup>
         </p>
         <div class="equation">$$\mathcal{L}(t) \propto dt^{1-D_F}$$</div>
         <p>Substituting this into the definition of velocity:</p>
@@ -792,20 +829,14 @@
 
       <p><strong>The Classical Law:</strong></p>
       <div class="equation">$$m \frac{\hat{d}\mathbf{V}}{dt} = -\nabla U$$</div>
-      <p
-        style="
-          text-align: center;
-          color: var(--text-secondary);
-          font-size: 0.9rem;
-        "
-      >
+      <p class="equation-note">
         (Mass × Acceleration = External Potential Gradient)
       </p>
 
       <p>
         Expanding the Scale-Covariant Derivative ($\hat{d}/dt$) reveals the
         hidden terms. After separating the Real and Imaginary parts, we obtain
-        the <strong>Quantum Euler Equation</strong> [3]:
+        the <strong>Quantum Euler Equation</strong>:<sup class="cite">[3]</sup>
       </p>
 
       <div class="equation">
@@ -821,7 +852,7 @@
         <p>
           If we define the wavefunction $\psi = \sqrt{\rho} e^{iS/\hbar}$, this
           hydrodynamic equation is <strong>mathematically identical</strong> to
-          the <strong>Schrödinger Equation</strong> [3].
+          the <strong>Schrödinger Equation</strong>.<sup class="cite">[3]</sup>
         </p>
       </div>
 
@@ -925,7 +956,7 @@
         Gravity. Standard General Relativity (GR) treats spacetime as a
         geometry. DHCM asserts that this geometry is merely the
         <strong>macroscopic pressure map</strong> of the underlying Holostrome
-        fluid [4].
+        fluid.<sup class="cite">[4]</sup>
       </p>
 
       <h2 class="subsection-title">3.1 Gravity as Bernoulli Pressure</h2>
@@ -964,7 +995,7 @@
         the rotation speeds of galaxies without inventing "Dark Matter"
         (invisible particles we cannot find). DHCM solves this by adopting the
         <strong>Logarithmic Superfluid Vacuum (LogSE)</strong> model, which has
-        two distinct phases [4].
+        two distinct phases.<sup class="cite">[4]</sup>
       </p>
 
       <p>
@@ -988,7 +1019,10 @@
           <li>
             <strong>Validation:</strong> This explains why we see
             <strong>no Dark Matter effects</strong> in our solar system or in
-            <strong>Wide Binary Stars</strong> (Banik et al., 2024) [5].
+            <strong>Wide Binary Stars</strong> (Banik et al., 2024).<sup
+              class="cite"
+              >[5]</sup
+            >
           </li>
         </ul>
       </div>
@@ -1073,7 +1107,7 @@
         <strong>The Solution:</strong> Consciousness does not reside in the
         discrete neurons. It resides in the
         <strong>continuous</strong> substrate: The
-        <strong>Astroglial Syncytium</strong> [6].
+        <strong>Astroglial Syncytium</strong>.<sup class="cite">[6]</sup>
       </p>
 
       <h2 class="subsection-title">4.1 The Axiom of Unity</h2>
@@ -1094,8 +1128,8 @@
         <li>
           <strong>The Substrate:</strong> Astrocytes (glial cells) are fused
           together by <strong>Connexin-43 Gap Junctions</strong>, forming a
-          single, brain-wide, continuous cytoplasm [7]. This is the
-          <strong>Syncytium</strong>. It is an
+          single, brain-wide, continuous cytoplasm.<sup class="cite">[7]</sup>
+          This is the <strong>Syncytium</strong>. It is an
           <strong>Isoelectric Ocean</strong>.
         </li>
       </ul>
@@ -1134,8 +1168,9 @@
             <li>
               <strong>The Critical Mechanism:</strong> Because microtubules
               exhibit <strong>Hysteresis</strong> (as shown by Sahu et al.,
-              2013) [8], the Astroglial microtubules continue to "ring"
-              (oscillate) even after the neuronal spike has ceased.
+              2013),<sup class="cite">[8]</sup> the Astroglial microtubules
+              continue to "ring" (oscillate) even after the neuronal spike has
+              ceased.
             </li>
             <li>
               <strong>The Conversion:</strong> This "Impulse Response" converts
@@ -1159,7 +1194,7 @@
             <li>
               Unlike neurons, Astrocytes are <strong>Isoelectric</strong> and
               coupled via <strong>Connexin-43 Gap Junctions</strong>, forming a
-              giant continuous cytoplasm [7].
+              giant continuous cytoplasm.<sup class="cite">[7]</sup>
             </li>
             <li>
               The Syncytium absorbs the local "ring" from its own cytoskeleton,
@@ -1317,7 +1352,10 @@
         <p>
           To determine if the Syncytial Field utilizes
           <strong>Quantum Resonance</strong> or purely
-          <strong>Classical Hysteresis</strong>, we exploit Nuclear Spin [9].
+          <strong>Classical Hysteresis</strong>, we exploit Nuclear Spin.<sup
+            class="cite"
+            >[9]</sup
+          >
         </p>
 
         <div class="experiment-section">
