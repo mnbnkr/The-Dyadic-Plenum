@@ -54,6 +54,9 @@
         --font-mono: "JetBrains Mono", monospace;
         --max-width: 1033px;
         --sheet-gap: 40px;
+
+        /* Nav specific */
+        --nav-width: 320px;
       }
 
       /* Dark Mode (The Blackboard/Obsidian) */
@@ -78,6 +81,7 @@
 
       html {
         font-size: 17px;
+        scroll-behavior: smooth;
       }
 
       body {
@@ -268,6 +272,7 @@
         padding-bottom: 4px;
         break-after: avoid;
         text-indent: 0;
+        scroll-margin-top: 20px; /* Offset for anchor links */
       }
 
       h4 {
@@ -278,6 +283,7 @@
         margin-bottom: 4px;
         color: var(--text-secondary);
         text-indent: 0;
+        scroll-margin-top: 20px;
       }
 
       h5 {
@@ -364,10 +370,182 @@
         color: var(--text-secondary);
         opacity: 0.6;
       }
+
+      /* --- 11. PDF-STYLE NAVIGATION --- */
+
+      /* The Toggle Tab */
+      #nav-trigger {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: var(--bg-paper);
+        border: 1px solid var(--border);
+        border-right: none;
+        padding: 15px 8px;
+        cursor: pointer;
+        z-index: 2000;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px 0 0 4px;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transition:
+          right 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          background-color 0.2s,
+          color 0.2s;
+        letter-spacing: 0.1em;
+      }
+
+      #nav-trigger:hover {
+        color: var(--accent);
+        background-color: var(--box-bg);
+      }
+
+      /* The Slide-out Panel */
+      #pdf-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: var(--nav-width);
+        height: 100vh;
+        background-color: var(--bg-paper);
+        border-left: 1px solid var(--border);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 1999;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0;
+      }
+
+      #pdf-nav.open {
+        transform: translateX(0);
+      }
+
+      /* Trigger movement when open */
+      body.nav-is-open #nav-trigger {
+        right: var(--nav-width);
+        border-right: 1px solid var(--border); /* Close the box */
+      }
+
+      /* Nav Header */
+      .nav-header {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0 30px 20px 30px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Nav Content (Scrollable) */
+      .nav-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0 30px 40px 30px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) transparent;
+      }
+
+      .nav-content::-webkit-scrollbar {
+        width: 4px;
+      }
+      .nav-content::-webkit-scrollbar-thumb {
+        background-color: var(--border);
+      }
+
+      /* Nav List Items */
+      .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        margin-bottom: 12px;
+      }
+
+      .nav-link {
+        display: block;
+        text-decoration: none;
+        border: none; /* Override default link underline */
+        color: var(--text-secondary);
+        transition:
+          color 0.2s,
+          transform 0.2s;
+        font-family: var(--font-main);
+        line-height: 1.3;
+      }
+
+      .nav-link:hover {
+        color: var(--accent);
+        transform: translateX(2px);
+      }
+
+      /* Hierarchy Styling */
+      .nav-link.level-h3 {
+        font-variant: small-caps;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-primary);
+        margin-top: 15px;
+      }
+
+      .nav-link.level-h4 {
+        font-size: 0.85rem;
+        font-style: italic;
+        padding-left: 15px;
+        border-left: 1px solid var(--border);
+        margin-left: 2px;
+      }
+
+      .nav-link.level-h4:hover {
+        border-left-color: var(--accent);
+      }
+
+      /* Active State */
+      .nav-link.active {
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      /* Mobile Adjustment */
+      @media (max-width: 600px) {
+        :root {
+          --nav-width: 280px;
+        }
+        #pdf-nav {
+          border-left: 1px solid var(--accent); /* More visible boundary on small screens */
+        }
+      }
     </style>
   </head>
 
-  <body>
+  <body class="nav-is-open">
+    <!-- NAVIGATION ELEMENTS -->
+    <div id="nav-trigger" onclick="toggleNav()">INDEX</div>
+
+    <nav id="pdf-nav" class="open">
+      <div class="nav-header">
+        <span>Table of Contents</span>
+        <span style="cursor: pointer" onclick="toggleNav()">[×]</span>
+      </div>
+      <div class="nav-content">
+        <ul class="nav-list" id="nav-list-container">
+          <!-- JS will inject items here -->
+        </ul>
+      </div>
+    </nav>
+
     <!-- PAGE 1: Title, Abstract, Section 1.0 -->
     <div class="paper-sheet">
       <div class="journal-banner">
@@ -1549,5 +1727,98 @@
       </div>
       <div class="page-footer">8 of 8</div>
     </div>
+
+    <!-- NAVIGATION SCRIPT -->
+    <script>
+      function toggleNav() {
+        const nav = document.getElementById("pdf-nav");
+        const body = document.body;
+        nav.classList.toggle("open");
+        body.classList.toggle("nav-is-open");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const navList = document.getElementById("nav-list-container");
+        const headers = document.querySelectorAll("h3, h4");
+
+        // Flag to prevent observer from overriding click actions during scroll
+        let isManualScroll = false;
+        let scrollTimeout;
+
+        // 1. Build TOC
+        headers.forEach((header, index) => {
+          if (!header.id) header.id = "section-" + index;
+
+          const li = document.createElement("li");
+          li.className = "nav-item";
+
+          const a = document.createElement("a");
+          a.href = "#" + header.id;
+          a.className = "nav-link";
+          a.textContent = header.textContent;
+
+          // CLICK HANDLER
+          a.onclick = (e) => {
+            // Lock the observer
+            isManualScroll = true;
+            clearTimeout(scrollTimeout);
+
+            // Force visual update immediately
+            document
+              .querySelectorAll(".nav-link")
+              .forEach((link) => link.classList.remove("active"));
+            a.classList.add("active");
+
+            // Unlock observer after smooth scroll finishes (approx 800ms)
+            scrollTimeout = setTimeout(() => {
+              isManualScroll = false;
+            }, 800);
+
+            // Mobile toggle logic
+            if (window.innerWidth < 768) toggleNav();
+          };
+
+          if (header.tagName === "H3") {
+            a.classList.add("level-h3");
+            li.appendChild(a);
+            navList.appendChild(li);
+          } else if (header.tagName === "H4") {
+            a.classList.add("level-h4");
+            li.appendChild(a);
+            navList.appendChild(li);
+          }
+        });
+
+        // 2. Intersection Observer (Scroll Spy)
+        // Adjusted margin: looks for headers in the top 20% of the screen
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px 0px -80% 0px",
+          threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          // If user recently clicked, ignore scroll events
+          if (isManualScroll) return;
+
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Remove active from all
+              document
+                .querySelectorAll(".nav-link")
+                .forEach((link) => link.classList.remove("active"));
+
+              // Add to current
+              const activeLink = document.querySelector(
+                `.nav-link[href="#${entry.target.id}"]`,
+              );
+              if (activeLink) activeLink.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        headers.forEach((header) => observer.observe(header));
+      });
+    </script>
   </body>
 </html>
