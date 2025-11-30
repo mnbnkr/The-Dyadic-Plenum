@@ -1,6 +1,8 @@
-# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics & Syncytial Field Theory (Working Draft)
+# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Working Draft)
 
-This repository contains the active working draft for **Dynamic Hyper-Continuum Mechanics (DHCM)** and **Syncytial Field Theory (SFT)**. The Dyadic Plenum is a monolithic theoretical framework that aims to resolve the "Finite-Static Paradox" in fundamental physics and the "Binding Problem" in neuroscience. It posits that the ontological substrate of reality is not a static void, but a **Holostrome**—a non-causal, fractal **Dilatant Hyper-Fluid** characterized by infinite intrinsic velocity.
+This repository contains the active working draft for **The Dyadic Plenum**. This monolithic theoretical framework introduces **Dynamic Hyper-Continuum Mechanics (DHCM)** and establishes a conceptual bridge to **Syncytial Field Theory (SFT)**. The work aims to resolve the "Finite-Static Paradox" in fundamental physics and provides a physical basis for the "Binding Problem" in neuroscience.
+
+It posits that the ontological substrate of reality is not a static void, but a **Holostrome**—a non-causal, fractal **Dilatant Hyper-Fluid** characterized by infinite intrinsic velocity.
 
 ## Core Theoretical Pillars
 
@@ -16,7 +18,7 @@ Mass is not an intrinsic property of matter but an emergent effect of **Shear-Th
 **4. The Dark Matter Resolution: Vacuum Reynolds Number**
 Addressing the cosmological crisis, DHCM falsifies the need for particle Dark Matter. We introduce the **Vacuum Reynolds Number** to predict a phase transition in gravitational drag. The theory posits that gravity shifts from Laminar flow (Newtonian) to Turbulent flow (Galactic Halo) at specific scales. This model is supported by recent Gaia DR3 data on wide binaries (Banik et al., 2024), which suggests a breakdown of standard gravity without the presence of dark matter halos.
 
-**5. Syncytial Field Theory (The Physics of Mind)**
-SFT bridges the gap between physics and biology. It argues that consciousness is the local biological validation of universal field principles. Rejecting "Quantum Mind" theories that rely on fragile spin states, SFT identifies the brain's **Astroglial Syncytium** as a biological capacitor capable of sustaining macroscopic, classical hydrodynamic standing waves. This continuous ionic field provides the mechanism for binding discrete neuronal spikes into a unified subjective topography (Qualia).
+**5. The Biological Connection (Syncytial Field Theory)**
+Finally, the paper applies the physical principles of the Holostrome to the problem of consciousness. It draws a connection to **Syncytial Field Theory (SFT)**, arguing that the brain acts as a local validation of the universal field principle. By modeling the **Astroglial Syncytium** as a "Living Capacitor," the framework suggests that consciousness arises from macroscopic hydrodynamic standing waves. This section serves to link the physics of the vacuum to the biological mind, rather than providing the full biological derivation of SFT.
 
 *Please note: This document is a working draft (Rev 2.1) and subject to ongoing revision, mathematical verification, and experimental proposal refinement.*
