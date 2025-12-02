@@ -27,4 +27,4 @@ The paper establishes a physical isomorphism between the Cosmos and the Mind. It
 *   **Rheology of Attention:** We mirror the physics of the vacuum to explain focus. "Attention" is derived as a **Shear-Thickening Phase Transition** where gamma synchrony increases the local viscosity of the syncytial field, "solidifying" information into Working Memory.
 
 ---
-*Please note: This document is a working draft (Rev 2.2) and subject to ongoing revision, mathematical verification, and experimental proposal refinement.*
+*Please note: This document is a working draft (Rev 2.3) and subject to ongoing revision, mathematical verification, and experimental proposal refinement.*
