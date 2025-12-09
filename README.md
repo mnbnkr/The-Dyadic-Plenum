@@ -41,7 +41,9 @@ DHCM rejects Metric Expansion in favor of a **Static Euclidean Universe** govern
 
 #### A. The "Dark Matter" Resolution: Vacuum Reynolds Number
 We introduce the **Vacuum Reynolds Number ($Re_\Omega$)**. Gravity shifts from Laminar (Newtonian) to Turbulent (Galactic Halo) based on flow scale:
+
 $$ Re_\Omega = \frac{2m v r}{\hbar} $$
+
 *   **Laminar Phase ($Re < Re_{crit}$):** Solar systems and Wide Binaries. Gravity is Newtonian.
 *   **Turbulent Phase ($Re \gg Re_{crit}$):** Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag and flat rotation curves.
 
