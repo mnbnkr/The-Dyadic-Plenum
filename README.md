@@ -1,10 +1,10 @@
-# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Rev. 4.0)
+# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Rev. 4.1)
 
 ## Abstract
 
 This repository contains the active working treatise for **The Dyadic Plenum**. This framework introduces **Dynamic Hyper-Continuum Mechanics (DHCM)** and establishes a rigorous physical isomorphism to **Syncytial Field Theory (SFT)** in neuroscience.
 
-The work aims to resolve the **"Finite-Static Paradox"** in fundamental physics (reconciling the infinite energy of the Quantum Vacuum with the static geometry of General Relativity) and provides a non-computational solution to the **"Binding Problem"**.
+The work aims to resolve the **"Finite-Static Paradox"** in fundamental physics (reconciling the infinite energy of the Quantum Vacuum with the geometric stasis of the Block Universe) and provides a non-computational solution to the **"Binding Problem"**.
 
 It posits that the ontological substrate of reality is not a static void or discrete grid, but a **Holostrome**—a non-causal **Computational Flux** characterized by **Infinite Intrinsic Velocity** ($v_p \to \infty$) and dilatant (shear-thickening) hydrodynamics.
 
@@ -36,12 +36,14 @@ We re-derive the Standard Model as the hydrodynamics of a **Dilatant (Shear-Thic
 *   **The Photon:** An **Open Transverse Shear Wave**. Unlike matter (knots), it has no closed topology and thus no rest mass, but propagates shear stress through the medium.
 *   **Entanglement as Hydraulic Rigidity:** In a dilatant plenum, sudden stress causes the vacuum between particles to instantaneously phase-transition into a rigid solid. Correlation is mechanical ("Jamming"), distinct from causal signaling.
 
-### 4. Cosmology: The Static Euclidean Flux
-DHCM rejects Metric Expansion in favor of a **Static Euclidean Universe** governed by **Logarithmic Metric Scaling**.
+### 4. Cosmology: The Stationary Euclidean Flux
+DHCM rejects Metric Expansion in favor of a **Stationary Flux Universe** governed by **Logarithmic Metric Scaling**.
 
 #### A. The "Dark Matter" Resolution: Vacuum Reynolds Number
 We introduce the **Vacuum Reynolds Number ($Re_\Omega$)**. Gravity shifts from Laminar (Newtonian) to Turbulent (Galactic Halo) based on flow scale:
+
 $$ Re_\Omega = \frac{2m v r}{\hbar} $$
+
 *   **Laminar Phase ($Re < Re_{crit}$):** Solar systems and Wide Binaries. Gravity is Newtonian.
 *   **Turbulent Phase ($Re \gg Re_{crit}$):** Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag and flat rotation curves.
 
@@ -53,12 +55,12 @@ Redshift is re-interpreted not as Doppler velocity, but as the **Scale-Dependent
 ### 5. The Biological Connection: Syncytial Field Theory (SFT)
 The brain is a localized simulation of the Holostrome.
 *   **The Substrate:** Consciousness is the **Hydrodynamic Tension** of the **Astroglial Isoelectric Ocean**. It bridges discrete neuronal spikes via the continuous glial syncytium.
+*   **The Ionic Shield:** The system is protected from external noise not by the skull, but by the **Glia Limitans** and conductive **Cerebrospinal Fluid (CSF)**, which act as a biological Debye Shield (Faraday Cage).
 *   **The "Piston & Plenum" Model:** Neurons act as discrete pistons striking a continuous mercury pool (the Syncytium). The "binding" is the instantaneous global tension of the fluid surface.
 *   **The Aharonov-Bohm Link:** The brain utilizes the Aharonov-Bohm operator to detect phase changes in the vector potential $\mathbf{A}$ instantly, effectively solving the binding problem via **Non-Local Hydraulic Rigidity**.
-*   **Qualia as State Vectors:**
-    *   *Topography* = Shape/Object
-    *   *Texture* = Color/Timbre (modulated by **Microtubule Hysteresis**)
-    *   *Density* = Intensity/Pain
+
+### 6. The Simulation Limit (New in Rev 4.1)
+*   **The Analog Defense:** Because the Holostrome is a true continuum (requiring infinite bandwidth to simulate) and Consciousness relies on this continuity, the probability that we exist in a discrete digital simulation collapses. The "Chain of Simulations" is broken by the impossibility of simulating true fluid dynamics without loss.
 
 ---
 
@@ -80,4 +82,4 @@ The treatise includes specific "Kill-Switch" protocols to falsify the theory.
 *   **Prediction:** DHCM predicts a **Null Result** (Classical Hydrodynamic Mass), distinguishing it from Quantum Spin theories (Fisher/Posner) which predict isotope divergence.
 
 ---
-*Please note: This document is a summary of the Rev 4.0 Treatise. Refer to `THE DYADIC PLENUM.md` for full mathematical derivations and citations.*
+*Please note: This document is a summary of the Rev 4.1 Treatise. Refer to `THE DYADIC PLENUM.md` for full mathematical derivations and citations.*
