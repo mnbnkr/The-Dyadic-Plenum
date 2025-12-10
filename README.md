@@ -1,8 +1,11 @@
-# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Rev. 4.1)
+# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Working Draft v4.1)
+
+> **STATUS: ACTIVE THEORETICAL DRAFT**
+> This repository contains the working treatise for **The Dyadic Plenum**. The concepts presented herein represent an evolving theoretical framework under active development. For the full mathematical derivations, rigorous argumentation, and complete citation list, please refer strictly to the live document at: **[https://mnbnkr.github.io/The-Dyadic-Plenum/](https://mnbnkr.github.io/The-Dyadic-Plenum/)**
 
 ## Abstract
 
-This repository contains the active working treatise for **The Dyadic Plenum**. This framework introduces **Dynamic Hyper-Continuum Mechanics (DHCM)** and establishes a rigorous physical isomorphism to **Syncytial Field Theory (SFT)** in neuroscience.
+This framework introduces **Dynamic Hyper-Continuum Mechanics (DHCM)** and establishes a rigorous physical isomorphism to **Syncytial Field Theory (SFT)** in neuroscience.
 
 The work aims to resolve the **"Finite-Static Paradox"** in fundamental physics (reconciling the infinite energy of the Quantum Vacuum with the geometric stasis of the Block Universe) and provides a non-computational solution to the **"Binding Problem"**.
 
@@ -59,7 +62,7 @@ The brain is a localized simulation of the Holostrome.
 *   **The "Piston & Plenum" Model:** Neurons act as discrete pistons striking a continuous mercury pool (the Syncytium). The "binding" is the instantaneous global tension of the fluid surface.
 *   **The Aharonov-Bohm Link:** The brain utilizes the Aharonov-Bohm operator to detect phase changes in the vector potential $\mathbf{A}$ instantly, effectively solving the binding problem via **Non-Local Hydraulic Rigidity**.
 
-### 6. The Simulation Limit (New in Rev 4.1)
+### 6. The Simulation Limit
 *   **The Analog Defense:** Because the Holostrome is a true continuum (requiring infinite bandwidth to simulate) and Consciousness relies on this continuity, the probability that we exist in a discrete digital simulation collapses. The "Chain of Simulations" is broken by the impossibility of simulating true fluid dynamics without loss.
 
 ---
@@ -82,4 +85,7 @@ The treatise includes specific "Kill-Switch" protocols to falsify the theory.
 *   **Prediction:** DHCM predicts a **Null Result** (Classical Hydrodynamic Mass), distinguishing it from Quantum Spin theories (Fisher/Posner) which predict isotope divergence.
 
 ---
-*Please note: This document is a summary of the Rev 4.1 Treatise. Refer to `THE DYADIC PLENUM.md` for full mathematical derivations and citations.*
+
+**Full Technical Details:**
+For the complete mathematical framework, rigorous derivation of the Logarithmic Schrödinger Equation, and the full analysis of the Aharonov-Bohm Operator in biological systems, please see the primary treatise page:
+👉 **[https://mnbnkr.github.io/The-Dyadic-Plenum/](https://mnbnkr.github.io/The-Dyadic-Plenum/)**
