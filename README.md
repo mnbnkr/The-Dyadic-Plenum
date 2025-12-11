@@ -22,7 +22,9 @@ DHCM rejects the discrete voxelization of space-time ("The Crime of the Cutoff")
 
 ### 2. Time as a Calculation Budget
 We unify Special and General Relativity by redefining Time not as a geometric dimension, but as a limited processing resource. We introduce the **Computational Budget ($C_{total}$)** conservation law:
+
 $$ C_{total}^2 = C_{spatial}^2 + C_{internal}^2 $$
+
 Time dilation is rigorously derived as the exhaustion of bandwidth. As a particle allocates more processing power to spatial negotiation (Velocity), it has less remaining for internal state updates (Time). Near $c$, objects do not "slow down" geometrically; they experience a processing "Lag Spike."
 
 ### 3. Mass as Viscosity (The Dilatant Vacuum)
@@ -35,7 +37,9 @@ Mass is not intrinsic; it is the **Viscosity of Resistance**.
 
 ### 4. Cosmology: The Vacuum Reynolds Number ($Re_\Omega$)
 We resolve the "Dark Matter" anomaly without inventing new particles. The behavior of gravity is determined by the phase transition from Laminar to Turbulent flow:
+
 $$ Re_\Omega = \frac{2m v r}{\hbar} $$
+
 *   **Laminar Phase ($Re < Re_{crit}$):** Solar systems and Wide Binaries. Gravity is Newtonian.
 *   **Turbulent Phase ($Re \gg Re_{crit}$):** Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag and flat rotation curves.
 *   **Validation:** This model is definitively supported by **Banik et al. (2024)** using Gaia DR3 data, which confirmed Newtonian behavior in wide binaries (low $Re_\Omega$) and falsified Particle Dark Matter models.
