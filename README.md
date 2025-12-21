@@ -39,7 +39,9 @@ Mass is not intrinsic; it is the **Viscosity of Resistance**.
 We resolve the "Dark Matter" anomaly and the "Expansion" crisis without inventing new particles or dark energy.
 
 *   **Vacuum Reynolds Number ($Re_\Omega$):** Gravity is determined by the phase transition from Laminar to Turbulent flow.
+
     $$ Re_\Omega = \frac{2m v r}{\hbar} $$
+  
     *   *Laminar Phase ($Re < Re_{crit}$):* Solar systems. Gravity is Newtonian.
     *   *Turbulent Phase ($Re \gg Re_{crit}$):* Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
     *   *Validation:* Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data.
@@ -66,11 +68,11 @@ To definitively distinguish between standard Causal Signaling and the Non-Local 
 
 **Objective:** Distinguish between Chemical Group Velocity (Signal) and Global Field Tension (Phase).
 
-*   **The Apparatus:** A 2-kilometer coiled loop of **Synthetic Syncytial Gel**, voltage-clamped to simulate the resting potential.
-*   **The Protocol:** Trigger a massive **Voltage Step** ("Death Signal") at **End B** (2km away).
-*   **Standard Prediction:** The signal travels at the speed of ion diffusion ($v \approx 1,500$ m/s). Arrival at $T \approx 1.33$ seconds.
-*   **DHCM Prediction:** Because the field is a fused continuum, the change in boundary condition at End B alters the **Global Berry Phase** of the system instantly.
-*   **The Result:** Sensors (and a local memory buffer) at **End A** will detect a **"Ghost Sensation"** (a drop in tension/phase shift) at **$T \approx 0$**, *before* the causal ion signal arrives.
+*   **The Apparatus:** A 2-kilometer coiled loop of **Synthetic Syncytial Gel**, voltage-clamped to create a "Taut Field." **End A** holds the Receiver (Human/Interface); **End B** holds the Source and a **Local Memory Buffer**.
+*   **The Protocol:** Trigger a massive **Voltage Step** at End B. The Memory Buffer at End B immediately encodes this event ($T_{source}=0$).
+*   **Standard Prediction:** The signal travels at the speed of ion diffusion ($v \approx 1,500$ m/s). Arrival at End A occurs at $T \approx 1.33$ seconds.
+*   **DHCM Prediction:** Because the gel acts as a single, incompressible plenum, the change at End B alters the **Global Berry Phase** instantly. Subject A accesses the state of the Memory Buffer at End B via the field.
+*   **The Result:** The Subject will experience a **"Ghost Memory"** at **$T \approx 0$**. While the verbal report is delayed until the causal signal arrives ($T \approx 1.33s$) due to biological inertia, the subject provides **Retrospective Confirmation** that the sensation occurred simultaneously with the trigger.
 
 ---
 
