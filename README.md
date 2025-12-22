@@ -39,12 +39,10 @@ Mass is not intrinsic; it is the **Viscosity of Resistance**.
 We resolve the "Dark Matter" anomaly and the "Expansion" crisis without inventing new particles or dark energy.
 
 *   **Vacuum Reynolds Number ($Re_\Omega$):** Gravity is determined by the phase transition from Laminar to Turbulent flow.
-
-    $$ Re_\Omega = \frac{2m v r}{\hbar} $$
-  
-    *   *Laminar Phase ($Re < Re_{crit}$):* Solar systems. Gravity is Newtonian.
-    *   *Turbulent Phase ($Re \gg Re_{crit}$):* Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
-    *   *Validation:* Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data.
+    $$\textstyle Re_\Omega = \frac{2m v r}{\hbar}$$
+    *   **Laminar Phase** ($Re \lt Re_{crit}$): Solar systems. Gravity is Newtonian.
+    *   **Turbulent Phase** ($Re \gg Re_{crit}$): Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
+    *   **Validation:** Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data.
 
 *   **Stationary Metric Flux:** We reject the expanding universe hypothesis. Redshift is a result of **Logarithmic Metric Scaling**. As the vacuum depth increases, the "ruler" of space and the "tick" of time scale logarithmically, explaining JWST's "impossibly mature" galaxies and Quasar time dilation in a static, eternal cosmos.
 
