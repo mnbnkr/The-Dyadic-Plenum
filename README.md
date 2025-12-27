@@ -1,4 +1,6 @@
-# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Rev 4.5)
+--- START OF FILE README.md ---
+
+# THE DYADIC PLENUM: Dynamic Hyper-Continuum Mechanics (Rev 4.8)
 
 > **STATUS: ACTIVE THEORETICAL DRAFT**
 > This repository contains the working treatise for **The Dyadic Plenum**. The concepts presented herein represent an evolving theoretical framework. For the full mathematical derivations, rigorous argumentation, and complete citation list, please refer strictly to the live document at:
@@ -9,7 +11,7 @@
 
 We present a monolithic theoretical framework that resolves the **'Finite-Static Paradox'** in fundamental physics and the **'Binding Problem'** in neuroscience.
 
-We posit that the fundamental ontological substrate is not a static void, but a **Holostrome**—a **Semi-Stochastic Computational Flux** characterized by **Infinite Intrinsic Velocity** and fractal geometry. By re-evaluating the vacuum as a **Dilatant Hyper-Fluid** (Shear-Thickening), we unify Gravity, Quantum Mechanics, and Consciousness under a single hydrodynamic model.
+We posit that the fundamental ontological substrate is not a static void, but a **Holostrome**—a **Semi-Stochastic Computational Flux** characterized by **Infinite Intrinsic Velocity** and fractal geometry ($D_F \approx 2$). By re-evaluating the vacuum as a **Dilatant Hyper-Fluid** (Shear-Thickening), we unify Gravity, Quantum Mechanics, and Consciousness under a single hydrodynamic model.
 
 ---
 
@@ -17,8 +19,9 @@ We posit that the fundamental ontological substrate is not a static void, but a 
 
 ### 1. The Ontology of Flux & Semi-Causality
 DHCM rejects the discrete voxelization of space-time ("The Crime of the Cutoff"). We derive the vacuum as a **Hyperreal** substrate governed by **Constructive Stochastics**, where "meaning" is an intrinsic bias of the flux.
-*   **Infinite Intrinsic Velocity:** The phase velocity of the medium is infinite ($v_p \to \infty$), allowing for instantaneous non-local correlation via the Global Operator ($d_-$).
-*   **Semi-Causality:** "True Causality" is replaced by an emergent friction between the **Inertia of the Past** (Local Operator) and the **Geometry of the Future** (Global Operator/Vector Potential).
+*   **The Scaling Constraint:** We prove Infinite Intrinsic Velocity via the uniformity of scale. For a proton to have the exact same mass at the cosmic horizon as it does locally, scale must be a global consensus correlated instantaneously ($v_p \to \infty$).
+*   **Semi-Causality:** "True Causality" is replaced by an emergent friction between the **Inertia of the Past** ($d_+$, Local Operator) and the **Geometry of the Future** ($d_-$, Global Operator/Vector Potential).
+*   **Bohm-Dirac Hydrodynamics:** We identify the magnetic vector potential ($\mathbf{A}$) not as a mathematical abstraction, but as the physical **Stream Velocity** of the vacuum fluid.
 
 ### 2. Time as a Calculation Budget
 We unify Special and General Relativity by redefining Time not as a geometric dimension, but as a limited processing resource. We introduce the **Computational Budget ($C_{total}$)** conservation law:
@@ -33,18 +36,21 @@ Mass is not intrinsic; it is the **Viscosity of Resistance**.
 *   **Zitterbewegung:** The high-frequency vorticity of particles creates shear stress, locally hardening the vacuum into a "mass halo."
 *   **Rheological Chromodynamics:**
     *   **Electron:** Laminar Toroid / Hopf Fibration (Low shear = Low mass).
-    *   **Proton:** Turbulent Tri-Vortex Skyrmion (High shear = High mass/Solidified Vacuum).
+    *   **Proton:** Turbulent Tri-Vortex Skyrmion / **Volumetric Tripod**. The internal geometry creates a rigid skeleton of solidified vacuum (High shear = High mass).
+    *   **Photon:** A shear wave with a non-zero hydrodynamic drag. We distinguish between **$c_{light}$** (Terminal Velocity of Shear) and **$c_{causal}$** (Infinite Rigidity).
 
-### 4. Cosmology: Reynolds Numbers & Metric Flux
+### 4. Cosmology: M-CCC & Reynolds Numbers
 We resolve the "Dark Matter" anomaly and the "Expansion" crisis without inventing new particles or dark energy.
 
 *   **Vacuum Reynolds Number ($Re_\Omega$):** Gravity is determined by the phase transition from Laminar to Turbulent flow.
     $$\textstyle Re_\Omega = \frac{2m v r}{\hbar}$$
     *   **Laminar Phase** ($Re \lt Re_{crit}$): Solar systems. Gravity is Newtonian.
     *   **Turbulent Phase** ($Re \gg Re_{crit}$): Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
-    *   **Validation:** Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data.
+    *   **Validation:** Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data ($19\sigma$ confirmation of Newtonian behavior at low acceleration, falsifying particle Dark Matter).
 
-*   **Stationary Metric Flux:** We reject the expanding universe hypothesis. Redshift is a result of **Logarithmic Metric Scaling**. As the vacuum depth increases, the "ruler" of space and the "tick" of time scale logarithmically, explaining JWST's "impossibly mature" galaxies and Quasar time dilation in a static, eternal cosmos.
+*   **Modified Conformal Cyclic Cosmology (M-CCC):** We reject the expanding universe hypothesis.
+    *   **Logarithmic Metric Scaling:** Redshift is a result of the metric ruler scaling with vacuum density.
+    *   **The Conformal Thaw:** Photon viscosity thermalizes light into the background potential. When the vacuum becomes too dense, "Contrast" is lost, matter melts back into the flux, and the entropy resets for the next cycle.
 
 ---
 
@@ -56,21 +62,25 @@ We establish a rigorous physical isomorphism between the Cosmos and the Mind. Th
 *   **The Substrate:** Consciousness is the **Hydrodynamic Tension** of the **Astroglial Isoelectric Ocean**.
 *   **The Actuators ($d_+$):** Neurons act as discrete **Pistons** striking this continuous fluid manifold.
 *   **The Time-Smoother:** **Microtubule Hysteresis** acts as a ferroelectric memory buffer, smoothing the digital neuronal sparks into an analog flow (The "Specious Present").
-*   **The Binding ($d_-$):** The brain utilizes the **Aharonov-Bohm Operator** inside the "Faraday Cage" of the CSF/Glia Limitans. Because the medium is incompressible, a change in the Vector Potential ($\mathbf{A}$) alters the global topology instantly. This is **Hydraulic Rigidity**—the physical source of the "Unified Now."
+*   **Thermodynamic Filtration:** Evolution did not "hear" our thoughts; it selected for **Flow Efficiency**. Laminar flow (Pleasure) is low-entropy; Turbulent flow (Pain) is high-entropy. We are the descendants of the "Thermodynamically Honest."
 
 ---
 
-## Proposed Experiment: "The Ghost Cable"
+## Proposed Experiments & Validation
 
-To definitively distinguish between standard Causal Signaling and the Non-Local Hydraulic Rigidity proposed by SFT, we propose the following "Kill-Switch" protocol.
+To definitively distinguish between standard Causal Signaling and the Non-Local Hydraulic Rigidity proposed by SFT.
 
+### Experiment A: "The Ghost Cable"
 **Objective:** Distinguish between Chemical Group Velocity (Signal) and Global Field Tension (Phase).
-
-*   **The Apparatus:** A 2-kilometer coiled loop of **Synthetic Syncytial Gel**, voltage-clamped to create a "Taut Field." **End A** holds the Receiver (Human/Interface); **End B** holds the Source and a **Local Memory Buffer**.
+*   **The Apparatus:** A 2-kilometer coiled loop of **Synthetic Syncytial Gel**, voltage-clamped. **End A** holds the Receiver; **End B** holds the Source and a **Local Memory Buffer**.
 *   **The Protocol:** Trigger a massive **Voltage Step** at End B. The Memory Buffer at End B immediately encodes this event ($T_{source}=0$).
-*   **Standard Prediction:** The signal travels at the speed of ion diffusion ($v \approx 1,500$ m/s). Arrival at End A occurs at $T \approx 1.33$ seconds.
-*   **DHCM Prediction:** Because the gel acts as a single, incompressible plenum, the change at End B alters the **Global Berry Phase** instantly. Subject A accesses the state of the Memory Buffer at End B via the field.
-*   **The Result:** The Subject will experience a **"Ghost Memory"** at **$T \approx 0$**. While the verbal report is delayed until the causal signal arrives ($T \approx 1.33s$) due to biological inertia, the subject provides **Retrospective Confirmation** that the sensation occurred simultaneously with the trigger.
+*   **DHCM Prediction:** Because the gel acts as a single plenum, the **Global Berry Phase** shifts instantly. Subject A accesses the state of the Memory Buffer at End B via the field.
+*   **The Result:** The Subject will experience a **"Ghost Memory"** at **$T \approx 0$**. While the verbal report is delayed until the causal signal arrives ($T \approx 1.33s$), the subject provides **Retrospective Confirmation** that the sensation occurred simultaneously with the trigger.
+
+### Validation C: The Wide Binary "Kill Switch" (COMPLETED)
+*   **Data:** **Banik et al. (2024)** analysis of Gaia DR3.
+*   **Result:** Newtonian Gravity confirmed to **$19\sigma$** in wide binaries.
+*   **Implication:** Particle Dark Matter and MOND are falsified. The **Scale-Dependent Reynolds Number** is validated.
 
 ---
 
