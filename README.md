@@ -41,12 +41,16 @@ Mass is not intrinsic; it is the **Viscosity of Resistance**.
 We resolve the "Dark Matter" anomaly and the "Expansion" crisis without inventing new particles or dark energy.
 
 *   **The Gullstrand-Painlevé "River" Metric:** Gravity is not the bending of space, but the **Volumetric Inflow** of the vacuum fluid into metabolic mass-sinks.
-    $$ v_{river} = \sqrt{\frac{2GM}{r}} $$
+
+$$ v_{river} = \sqrt{\frac{2GM}{r}} $$
+
 *   **Vacuum Reynolds Number ($Re_\Omega$):** Gravity is determined by the phase transition from Laminar to Turbulent flow.
-    $$\textstyle Re_\Omega = \frac{2m v r}{\hbar}$$
-    *   **Laminar Phase** ($Re \lt Re_{crit}$): Solar systems. Gravity is Newtonian.
-    *   **Turbulent Phase** ($Re \gg Re_{crit}$): Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
-    *   **Validation:** Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data ($19\sigma$ confirmation of Newtonian behavior at low acceleration, falsifying particle Dark Matter).
+
+$$ Re_\Omega = \frac{2m v r}{\hbar} $$
+
+*   **Laminar Phase** ($Re \lt Re_{crit}$): Solar systems. Gravity is Newtonian.
+*   **Turbulent Phase** ($Re \gg Re_{crit}$): Galaxies. The vacuum breaks down into vortex shedding ("Dark Matter Halo"), creating constant drag.
+*   **Validation:** Confirmed by **Banik et al. (2024)** using Gaia DR3 wide binary data ($19\sigma$ confirmation of Newtonian behavior at low acceleration, falsifying particle Dark Matter).
 
 *   **Modified Conformal Cyclic Cosmology (M-CCC):** We reject the expanding universe hypothesis.
     *   **Logarithmic Metric Scaling:** Redshift is a result of the metric ruler scaling with vacuum density.
